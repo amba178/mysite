@@ -10,10 +10,10 @@
 
       = f.input :first_name
       = f.input :last_name 
-      = f.input :email
+      = f.input :email  
        
-      = f.input :password, placeholder: 'You can updated without password'
-      = f.input :password_confirmation
+      = f.input :password, required: false 
+      = f.input :password_confirmation, required: false 
       .form-group 
         = f.button :submit, class: 'btn btn-primary btn-block' do 
           %span{class: "glyphicon glyphicon-edit", aria: {hidden: "true"}} 

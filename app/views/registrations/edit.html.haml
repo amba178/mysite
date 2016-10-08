@@ -13,13 +13,13 @@
       = f.input :last_name 
       = f.input :email
      
-      = f.input :password
-      = f.input :password_confirmation
+      = f.input :password, required: false 
+      = f.input :password_confirmation, required: false 
       .form-group 
         = f.button :button, class: 'btn btn-primary btn-block' do 
           %span{class: "glyphicon glyphicon-edit", aria: {hidden: "true"}} 
           Edit Profile 
    
     %ul{class: 'edit-ul'} 
-      %li{class: 'edit-list'} Unhappy? #{link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?'}, method: :delete} 
+      %li{class: 'edit-list'} Unhappy? #{link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?'}, method: :delete}  
       %li{class: 'edit-list'}= link_to "Back", :back

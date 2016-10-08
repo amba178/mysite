@@ -212,6 +212,11 @@ p#share-paragraph{
     }
 }
 
+ul li:first-child.edit-list:after {
+  content: ' |';
+  color: #337ab7;
+}
+
 
 form.button_to {
   width: 100px;
