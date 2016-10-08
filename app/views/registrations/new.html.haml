@@ -1,4 +1,4 @@
--provide(:title, 'registration')
+-provide(:title, 'sign up')
 .row
   .col-xs-offset-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4.col-xs-4
     %h2{class: 'text-center'} Sign up
@@ -7,10 +7,9 @@
       -# = devise_error_messages!
       = f.input :first_name
       = f.input :last_name 
-      = f.input :email
-      -if f.object.password_required?  
-        = f.input :password
-        = f.input :password_confirmation
+      = f.input :email 
+      = f.input :password
+      = f.input :password_confirmation
       .form-group 
         = f.button :button, class: 'btn btn-primary btn-block' do 
           %span{class: "glyphicon glyphicon-user", aria: {hidden: "true"}} 

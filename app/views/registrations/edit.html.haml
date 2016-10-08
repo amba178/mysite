@@ -1,4 +1,5 @@
 -provide(:title, 'edit profile')
+
 .row
   .col-xs-offset-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4.col-xs-4
     %h2{class: 'text-center'} 
@@ -11,15 +12,14 @@
       = f.input :first_name
       = f.input :last_name 
       = f.input :email
-       
-      = f.input :password, placeholder: 'You can updated without password'
+     
+      = f.input :password
       = f.input :password_confirmation
       .form-group 
-        = f.button :submit, class: 'btn btn-primary btn-block' do 
+        = f.button :button, class: 'btn btn-primary btn-block' do 
           %span{class: "glyphicon glyphicon-edit", aria: {hidden: "true"}} 
           Edit Profile 
    
     %ul{class: 'edit-ul'} 
       %li{class: 'edit-list'} Unhappy? #{link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?'}, method: :delete} 
       %li{class: 'edit-list'}= link_to "Back", :back
-      %li{class: 'edit-list'}=link_to 'edit password',  edit_user_password_path 

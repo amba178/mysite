@@ -9,12 +9,16 @@
 		= link_to 'DEVELOP SAGAN', root_path ,class: "navbar-brand active"
 	.collapse.navbar-collapse.navbar-ex1-collapse
 		%ul{class: "nav navbar-nav navbar-right btn-group"}
-			%li= link_to "Home", root_path
+			-# %li= link_to "Home", root_path
 			-if current_user 
+				-if !current_user.image.blank? 
+					%li=image_tag current_user.image, id: 'nav-iamge'
+				-else
+					%li{class: 'glyphicon glyphicon-user nav-glyphicon', id: 'nav-image'}
+				%li= link_to "Edit Profile", edit_user_registration_path
 				%li= link_to "Log out", destroy_user_session_path, method: :delete 
 			-else 
-				%li= link_to "Sign up", new_user_registration_path  
-				%li
-					= link_to "Log in ", new_user_session_path 
-				%li= link_to "Login with twitter", '#'
+				%li= link_to "Sign up", new_user_registration_path
+				%li= link_to "Log in ", new_user_session_path
+				%li= link_to "Login with twitter", user_twitter_omniauth_authorize_path 
 

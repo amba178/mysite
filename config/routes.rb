@@ -16,7 +16,14 @@ Rails.application.routes.draw do
                                 :registration =>  'register',
                                 :edit =>          'edit',
                                 :cancel =>        'cancel',
-                                :confirmation =>  'verification'  }
+                                :confirmation =>  'verification'  },
+              controllers: {omniauth_callbacks: 'omniauth_callbacks',  registrations: 'registrations'}
+
+  devise_scope  :user  do 
+    match '/user', to: 'registrations#show', via: 'get'
+   # get '/profile', to: 'registrations#show', as: 'profile'
+ end
 
 
-end
+
+end 

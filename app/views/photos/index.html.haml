@@ -1,3 +1,4 @@
+-provide(:title, "Photos")
 .row.well.well-lg#gallery-index
 	-@photos.each do |photo|
 		.col-sm-6.col-lg-4.col-md-4.col-xs-12.img-responsive
@@ -9,7 +10,7 @@
 				=link_to "https://twitter.com/intent/tweet?text=#{image_tag photo.image_url(:thumb).to_s}", class: 'btn btn-primary btn-xs btn-share' do 
 					%sapn Share
 					=fa_icon 'facebook', class: 'fa-1x'
-				=link_to "https://twitter.com/intent/tweet?text=", class: 'btn btn-primary btn-xs btn-share' do 
+				=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share' do 
 					%sapn Share
 					=fa_icon 'twitter', class: 'fa-1x'
 

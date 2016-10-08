@@ -17,18 +17,21 @@ gem 'bootstrap-sass',          '3.2.0.0'
 gem "haml-rails", "~> 0.9"
 gem "bower-rails", "~> 0.10.0"
 gem 'devise'
+gem 'omniauth-twitter'
 gem 'rmagick'
 gem "fog-aws"
 gem "fog", "~> 1.27", require: "fog/rackspace/storage"
 gem "carrierwave"
-gem 'activemerchant', '~> 1.60'
+gem 'activemerchant'
 gem 'less-rails-bootstrap'
 gem 'therubyracer' # Ruby
 gem 'therubyrhino' # JRuby
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
-gem 'omniauth-auth0'
 gem "font-awesome-rails"
-
+gem 'simple_form'
+gem "figaro"
+gem 'meta-tags'
+# gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

@@ -5,6 +5,12 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photo = Photo.find(params[:id])
+    prepare_meta_tags(title: @photo.name,
+                      description: "sagan photo",
+                      keywords: 'Sagan',
+                      image: @photo.image.url(:thumb),
+                      twitter: {card: "summary_large_image"})
   end
 
   def new
@@ -14,7 +20,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save 
-      flash[:notice] = "Successfully created uploaded photo."
+      flash.now.notice = "Successfully created uploaded photo."
       redirect_to photos_url 
     else
       render 'new'

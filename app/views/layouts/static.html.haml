@@ -3,17 +3,17 @@
 	%head
 		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
 		%meta{name:  "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"}/
-		%title Home
+		= display_meta_tags
+		%meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		%title=full_title(yield(:title))
 		= csrf_meta_tags
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster|Pacifico"  
-		
-
 	%body
 		.container-fluid
 			- flash.each do |name, msg|
-				= content_tag :div, msg, class: "alert #{flash_to_css(name)}"
+				= content_tag :div, msg, class: "alert alert-#{name == :notice ? 'success' : 'danger'}"
 				%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
 			= yield
 		= render 'shared/footer'
