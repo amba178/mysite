@@ -1,4 +1,4 @@
-%footer{:id => [controller_name =='registrations' || (controller_name =='photos' && action_name == 'index') ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
+%footer{:id => [(controller_name =='registrations' && !['show'].include?(action_name)) || (controller_name =='photos' && action_name == 'index' && Photo.all.size > 3) ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
 	%div{:class => 'container'}
 		%ul{class: "footer-list"}
 			%li{class: "footer-list-item"}
