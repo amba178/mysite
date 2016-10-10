@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
     prepare_meta_tags(title: @photo.name,
                       description: "sagan photo",
                       keywords: 'Sagan',
+                      url: @photo.image.url(:thumb),
                       image: @photo.image.url(:thumb),
                       twitter: {card: "summary_large_image"})
   end
