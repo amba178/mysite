@@ -19,9 +19,12 @@ gem "bower-rails", "~> 0.10.0"
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'rmagick'
-gem "fog-aws"
-gem "fog", "~> 1.27", require: "fog/rackspace/storage"
+# gem "fog-aws"
+
+gem "fog"
 gem "carrierwave"
+gem 'carrierwave_direct'
+gem 'sidekiq'
 gem 'activemerchant'
 gem 'less-rails-bootstrap'
 gem 'therubyracer' # Ruby
