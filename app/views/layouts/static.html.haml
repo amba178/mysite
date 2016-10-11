@@ -13,8 +13,9 @@
 	%body
 		.container-fluid
 			- flash.each do |name, msg|
-				= content_tag :aside, msg, class: "alert alert-#{name == 'notice' ? 'info' : 'danger'}"
-				%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
+				-unless msg=='timeout'
+					= content_tag :aside, msg, class: "alert alert-#{name == 'notice' ? 'info' : 'danger'}"
+					%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
 			= yield
 		= render 'shared/footer'
 
