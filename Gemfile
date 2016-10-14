@@ -34,6 +34,8 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem "figaro"
 gem 'meta-tags'
+gem 'countries'
+gem 'tzinfo', '~> 1.2', '>= 1.2.2'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 

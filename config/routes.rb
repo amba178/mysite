@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'charges/new'
+
   # devise_for :users
   root to: 'static_pages#index'
   resources :photos 

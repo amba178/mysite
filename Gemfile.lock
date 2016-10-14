@@ -81,6 +81,10 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
+    countries (1.2.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -241,6 +245,7 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.6.0)
@@ -407,6 +412,7 @@ DEPENDENCIES
   carrierwave
   carrierwave_direct
   coffee-rails (~> 4.2)
+  countries
   devise
   figaro
   fog
@@ -431,6 +437,7 @@ DEPENDENCIES
   therubyrhino
   turbolinks (~> 5)
   twitter-bootstrap-rails!
+  tzinfo (~> 1.2, >= 1.2.2)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
