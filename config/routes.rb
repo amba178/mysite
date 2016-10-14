@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   
-
-  get 'charges/new'
-
-  # devise_for :users
   root to: 'static_pages#index'
-  resources :photos 
+  resources :photos, :charges  
   match 'about', to: 'static_pages#about', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
 
