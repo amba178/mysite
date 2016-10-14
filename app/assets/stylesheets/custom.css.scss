@@ -220,6 +220,38 @@ p#share-paragraph{
   }
 }
 
+.login-provider{
+  text-align: center;
+}
+.section-title.lines .text-provider{
+  position: relative;
+  top:-2px;
+  z-index: 6;
+  padding: 0 20px;
+  background: #fff;
+}
+.section-title{
+  position: relative;
+}
+.section-title.lines::before{
+  position: absolute;
+  left:0;
+  margin-top: 8px;
+  width: 100%;
+  height: 1px;
+  background: #e4e4e4;
+  content: '';
+  z-index: 5;
+}
+.icon {
+  width: 40px;
+  position: absolute;
+  background: #126f9a;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+}
+
 #error-explanation {
   color: #FF0000;;
   ul {

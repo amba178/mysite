@@ -21,6 +21,16 @@
           = f.button class: 'btn btn-primary btn-block' do 
             %span{ class: "glyphicon glyphicon-log-in", aria: {hidden: "true"}}
             Log in
+        .login-provider.button-group
+          .section-title.lines 
+            %h5
+              %span{class: 'text-provider'} or sign in with 
+
+          =link_to user_twitter_omniauth_authorize_path, class: 'btn btn-primary btn-block' do 
+
+            =fa_icon 'twitter', class: 'fa-1x'
+            Twitter
+    
 
       .form-group
         = f.check_box :remember_me
