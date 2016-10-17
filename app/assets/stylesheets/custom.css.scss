@@ -15,6 +15,11 @@
   margin-top: -62px;
  }
 
+#nav-image.img-circle {
+  border-radius: 50%;
+  border: 3px solid #fff;
+
+}
 .img-circle {
   border-radius: 50%;
   border: 3px solid #004d00;
@@ -260,6 +265,17 @@ p#share-paragraph{
     }
 }
 
+
+.panel.panel-info{
+  margin-top: 50px;
+}
+
+.charge-input-1{
+  margin-right: 20px;
+  margin-bottom: 20px !important;
+
+}
+
 ul li:first-child.edit-list:after {
   content: ' |';
   color: #337ab7;
@@ -288,6 +304,43 @@ img#nav-iamge{
   margin-top: 10px;
   color: #fff;
 }
+
+.btn-donate{
+  background-color: #32CD32;
+  border-color: #32CD32;
+  color: #fff;
+}
+
+
+.btn-donate:hover,
+.btn-donate:focus {
+  background-color: #32CD32;
+  border-color: #32CD32;
+  background-position: 0 -15px;
+  color: #fff;
+}
+.btn-donate:active,
+.btn-donate.active {
+  background-color: #32CD32;
+  border-color: #32CD32;
+  color: #fff;
+}
+
+.charges-label{
+  color: #696969;
+}
+.credit-top-margin{
+  margin-top: 20px;
+}
+.form-control.cvv{
+  width: 30%;
+  display: inline;
+}
+.img-responsive{
+  display: inline;
+}
+
+
 
 h1 {
   font-size: 3rem;

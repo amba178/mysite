@@ -8,7 +8,7 @@ class CreateCharges < ActiveRecord::Migration[5.0]
       t.string :card_type
       t.date :card_expires_on
       t.string :billing_address
-      t.integer :zip_code
+      t.string :zip_code
       t.string :city
       t.string :state
       t.string :country

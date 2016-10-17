@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015221540) do
+ActiveRecord::Schema.define(version: 20161017020216) do
 
   create_table "charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "ip_address"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20161015221540) do
     t.string   "card_type"
     t.date     "card_expires_on"
     t.string   "billing_address"
-    t.integer  "zip_code"
+    t.string   "zip_code"
     t.string   "city"
     t.string   "state"
     t.string   "country"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,2 +1,40 @@
-%h1 Charges#new
-%p Find me in app/views/charges/new.html.haml
+-provide(:title, 'Donation')
+.row
+	.col-xs-offset-3.col-xs-6
+		.panel.panel-info 
+			.panel-heading.text-center Secure Payment Info 
+			.panel-body
+				.col-xs-offset-2.col-xs-9
+					=form_for @charge do |f| 
+						
+						=f.radio_button :card_type, ['visa', 'mastercard', 'discover']
+						= fa_icon "cc-discover",class: 'fa-3x'
+						= fa_icon "cc-mastercard",class: 'fa-3x'
+						= fa_icon "cc-visa",class: 'fa-3x'
+						=f.radio_button :card_type, 'amex'
+						= fa_icon "cc-amex", class: 'fa-3x'
+						.form-group.credit-top-margin
+							=f.label :first_name, "Name(as it appears on your card)", class: 'charges-label' 
+							=f.text_field :first_name, class: 'form-control'
+
+						.form-group
+							=f.label :card_number, "Card number(no dashes or spaces)", class: 'charges-label'
+
+							=f.text_field :card_number, class: 'form-control' 
+						.form-group
+							=f.label :card_expires_on, class: 'charges-label' 
+							%br
+							=f.date_select :card_expires_on, {order: [:day, :month, :year]} 
+						.form-group 
+							=f.label :card_verification_value, 'Security code (3 on back, Amex: 4 on front)', class: 'charges-label'
+						
+							=f.text_field :card_verification_value, class: 'form-control cvv'
+							%span 
+								=image_tag 'cvv3.png', class: "img-responsive"
+
+
+						.button-group 
+							=f.submit 'Donate', class: 'btn btn-default btn-block btn-donate'
+			.panel-info.panel-footer.text-center
+				Thank you
+

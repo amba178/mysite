@@ -84,6 +84,7 @@ GEM
     countries (1.2.5)
       currencies (~> 0.4.2)
       i18n_data (~> 0.7.0)
+    credit_card_icons (0.1.1)
     currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -413,6 +414,7 @@ DEPENDENCIES
   carrierwave_direct
   coffee-rails (~> 4.2)
   countries
+  credit_card_icons
   devise
   figaro
   fog

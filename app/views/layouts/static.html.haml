@@ -12,9 +12,9 @@
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster|Pacifico"  
 	%body
 		.container-fluid
-			- flash.each do |name, msg|
-				-unless msg=='timeout'
-					= content_tag :aside, msg, class: "alert alert-#{name == 'notice' ? 'info' : 'danger'}"
+			- flash.each do |key, msg|
+				-unless key =='devise.skip_timeout'
+					= content_tag :aside, msg, class: "alert alert-#{key == 'notice' ? 'info' : 'danger'}"
 					%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
 			= yield
 		= render 'shared/footer'
