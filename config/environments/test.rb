@@ -44,10 +44,6 @@ Rails.application.configure do
 
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
-    ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new(
-      login:     ENV['login'],
-    password:  ENV['password'],
-    signature: ENV['signature']
-    )
+    ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
   end
 end

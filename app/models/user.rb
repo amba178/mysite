@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :charges 
+
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
@@ -10,6 +11,10 @@ class User < ApplicationRecord
    validates_presence_of :first_name, :last_name, :email
    validates_presence_of :password, :on => :create 
    validates_presence_of :password_confirmation, :on => :create  
+
+   def total_donation
+     charges.pluck(:amount).reduce(:+) 
+   end
 
   def self.from_omniauth(auth)
   	where(:provider => auth.provider, :uid => auth.uid).first_or_create do |user|

@@ -19,6 +19,7 @@ gem "bower-rails", "~> 0.10.0"
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'rmagick'
+# gem 'active_record-acts_as'
 # gem "fog-aws"
 
 gem "fog"

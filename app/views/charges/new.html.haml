@@ -6,31 +6,48 @@
 			.panel-body
 				.col-xs-offset-2.col-xs-9
 					=form_for @charge do |f| 
-						
-						=f.radio_button :card_type, ['visa', 'mastercard', 'discover']
+						= render 'shared/error_messages', object: f.object
+						-if @charge.errors.any?
+							%hr
+						- opts = [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]]
+						-# .center-block
+						= fa_icon "cc-mastercard",class: 'fa-3x center-block'
+						-# =f.radio_button :card_type, 'discover'
 						= fa_icon "cc-discover",class: 'fa-3x'
-						= fa_icon "cc-mastercard",class: 'fa-3x'
+						-# =f.radio_button :card_type, 'visa'
 						= fa_icon "cc-visa",class: 'fa-3x'
-						=f.radio_button :card_type, 'amex'
+						-# =f.radio_button :card_type, 'amex'
 						= fa_icon "cc-amex", class: 'fa-3x'
+						%hr
 						.form-group.credit-top-margin
-							=f.label :first_name, "Name(as it appears on your card)", class: 'charges-label' 
-							=f.text_field :first_name, class: 'form-control'
+							=f.label :name, "Name(as it appears on your card)", class: 'charges-label' 
+							=f.text_field :name, class: 'form-control'
 
 						.form-group
 							=f.label :card_number, "Card number(no dashes or spaces)", class: 'charges-label'
 
 							=f.text_field :card_number, class: 'form-control' 
 						.form-group
+							=f.label :card_type, class: 'charges-label' 
+							%br 
+							=f.select :card_type, opts , {include_blank: true}, class: 'select-margin'
+							%br
 							=f.label :card_expires_on, class: 'charges-label' 
 							%br
-							=f.date_select :card_expires_on, {order: [:day, :month, :year]} 
+							=f.date_select :card_expires_on,:order => [:month, :year], :start_year => Date.today.year, :end_year => (Date.today.year + 12), add_month_numbers: true, :discard_day => true
+
 						.form-group 
 							=f.label :card_verification_value, 'Security code (3 on back, Amex: 4 on front)', class: 'charges-label'
 						
 							=f.text_field :card_verification_value, class: 'form-control cvv'
 							%span 
 								=image_tag 'cvv3.png', class: "img-responsive"
+						.form-group
+							=f.label :amount, class: 'charges-label'
+							.input-group 
+								.input-group-addon $
+								=f.text_field :amount, class: 'form-control'
+								.input-group-addon .00
 
 
 						.button-group 

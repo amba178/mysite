@@ -14,7 +14,7 @@
 		=render 'shared/header'
 		.container#application-layout
 			-flash.each do |key, msg|
-				- unless key =='devise.skip_timeout'
+				- unless key =='timedout'
 					= content_tag :aside, msg, class: "alert alert-#{key == 'notice' ? 'info' : 'danger'}"
 					%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
 			= yield
