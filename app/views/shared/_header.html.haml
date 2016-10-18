@@ -12,7 +12,7 @@
 			-# %li= link_to "Home", root_path
 			-if current_user 
 				-if !current_user.image.blank? 
-					%li=image_tag current_user.image, id: 'nav-iamge'
+					%li=image_tag current_user.image, id: 'nav-image', class: "img-circle"
 				-else
 					%li{class: 'glyphicon glyphicon-user nav-glyphicon', id: 'nav-image'}
 				%li= link_to "Edit Profile", edit_user_registration_path

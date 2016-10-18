@@ -15,6 +15,11 @@
   margin-top: -62px;
  }
 
+img#nav-image {
+  margin-top: 4px;
+  border: 3px solid #fff;
+
+}
 .img-circle {
   border-radius: 50%;
   border: 3px solid #004d00;
@@ -168,6 +173,7 @@ p#share-paragraph{
 }
 
 
+
 .btn-share:hover,
 .btn-share:focus {
   background-color: #337ab7;
@@ -180,10 +186,37 @@ p#share-paragraph{
   border-color: #337ab7;
 }
 
-#error_explanation .alert.alert-danger ul{
-  float: right;
 
+
+
+/*erorr*/
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 0px 0;
+  }
 }
+
+.field_with_errors {
+  @extend .has-error;
+  /*.form-control {
+    color: #fcdede;
+  }*/
+}
+
+.error-explanations{
+  margin-bottom: 0px;
+}
+.ul-errors{
+  border: 2px solid #f2dede;
+   border-radius: 5px;
+}
+
+/*end error css */
+
+
+
 .alert-danger {
   margin-top: 18px;
 }
@@ -218,7 +251,12 @@ p#share-paragraph{
   .form-control {
     color: #a94442;
   }
+
 }
+.field_with_errors {
+    display: inline;
+}
+
 
 .login-provider{
   text-align: center;
@@ -260,6 +298,17 @@ p#share-paragraph{
     }
 }
 
+
+.panel.panel-info{
+  margin-top: 50px;
+}
+
+.charge-input-1{
+  margin-right: 20px;
+  margin-bottom: 20px !important;
+
+}
+
 ul li:first-child.edit-list:after {
   content: ' |';
   color: #337ab7;
@@ -288,6 +337,74 @@ img#nav-iamge{
   margin-top: 10px;
   color: #fff;
 }
+
+.btn-donate{
+  background-color: #32CD32;
+  border-color: #32CD32;
+  color: #fff;
+}
+
+
+.btn-donate:hover,
+.btn-donate:focus {
+  background-color: #32CD32;
+  border-color: #32CD32;
+  background-position: 0 -15px;
+  color: #fff;
+}
+.btn-donate:active,
+.btn-donate.active {
+  background-color: #32CD32;
+  border-color: #32CD32;
+  color: #fff;
+}
+
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color:  #32CD32;;
+  background-image: none;
+}
+
+.charges-label{
+  color: #696969;
+}
+.credit-top-margin{
+  margin-top: 20px;
+}
+.form-control.cvv{
+  width: 30%;
+  display: inline;
+}
+.img-responsive{
+  display: inline;
+}
+
+/*hr{
+  margin-top: 0px;
+}
+*/
+
+#charge_card_type{
+  margin-bottom: 15px;
+}
+
 
 h1 {
   font-size: 3rem;

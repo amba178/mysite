@@ -87,11 +87,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
    config.after_initialize do 
-   ActiveMerchant::Billing::Base.mode = :test 
+   ActiveMerchant::Billing::Base.mode = :production
     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-     :login => "sodkdkeekekeikdkdk",
-     :password => "salemalddkdkid",
-     :signature => "dkdkdiieieieidkdkkd-kdkdkkd"
+      login:     ENV['login'],
+    password:  ENV['password'],
+    signature: ENV['signature']
      )
   end
 end

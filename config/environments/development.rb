@@ -69,9 +69,9 @@ Rails.application.configure do
  config.after_initialize do 
    ActiveMerchant::Billing::Base.mode = :test 
    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-    :login => "sodkdkeekekeikdkdk",
-    :password => "salemalddkdkid",
-    :signature => "dkdkdiieieieidkdkkd-kdkdkkd"
+    login:    ENV['login'],
+    password: ENV['password'],
+    signature: ENV['signature']
     )
  end
  

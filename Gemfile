@@ -19,6 +19,7 @@ gem "bower-rails", "~> 0.10.0"
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'rmagick'
+# gem 'active_record-acts_as'
 # gem "fog-aws"
 
 gem "fog"
@@ -34,6 +35,9 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem "figaro"
 gem 'meta-tags'
+gem 'countries'
+gem 'tzinfo', '~> 1.2', '>= 1.2.2'
+gem 'credit_card_icons'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
