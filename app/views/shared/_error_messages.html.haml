@@ -6,4 +6,4 @@
 		
 		%ul
 			= list_of object.errors.full_messages.each do |msg|
-				#{msg}
+				#{msg[:message]}

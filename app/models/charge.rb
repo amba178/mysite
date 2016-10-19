@@ -29,13 +29,13 @@ class Charge < ApplicationRecord
 
 		def credit_card
 			@credit_card ||= ActiveMerchant::Billing::CreditCard.new(
-				:brand => card_type,
-				:number => card_number,
-				:verification_value => card_verification_value,
-				:month => card_expires_on.month,
-				:year => card_expires_on.year,
-				:first_name => first_name,
-				:last_name => last_name 
+				:brand              => card_type,
+				:number             => number,
+				:verification_value => cvv,
+				:month              => month,
+				:year               => year,
+				:first_name         => first_name,
+				:last_name          => last_name 
 				)
 		end
 
@@ -44,9 +44,25 @@ class Charge < ApplicationRecord
 		end
 
 		def last_name
-			name.split.last 
+			return "" if name.split.size <= 1
+			name.split.last  
 		end
-	
+
+		def cvv
+			card_verification_value.strip
+		end
+
+		def number
+			card_number.strip
+		end
+
+		def month
+			card_expires_on.month
+		end
+
+		def year
+			card_expires_on.year
+		end
 
 
 end

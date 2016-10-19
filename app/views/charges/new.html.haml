@@ -9,7 +9,7 @@
 						= render 'shared/error_messages', object: f.object
 						-if @charge.errors.any?
 							%hr
-						- opts = [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]]
+						- opts = [["Visa", "visa"], ["MasterCard", "mastercard"], ["Discover", "discover"], ["American Express", "american_express"]]
 						-# .center-block
 						= fa_icon "cc-mastercard",class: 'fa-3x center-block'
 						-# =f.radio_button :card_type, 'discover'
@@ -30,7 +30,7 @@
 						.form-group
 							=f.label :card_type, class: 'charges-label' 
 							%br 
-							=f.select :card_type, opts , {include_blank: true}, class: 'select-margin'
+							=f.select :card_type, opts, class: 'select-margin'
 							%br
 							=f.label :card_expires_on, class: 'charges-label' 
 							%br
@@ -51,7 +51,7 @@
 
 
 						.button-group 
-							=f.submit 'Donate', class: 'btn btn-default btn-block btn-donate'
+							=f.submit 'Donate', class: 'btn btn-default btn-block btn-donate',  data: { disable_with: "Processing wait...." }
 			.panel-info.panel-footer.text-center
 				Thank you
 

@@ -14,8 +14,6 @@ class ChargesController < ApplicationController
       else
         render  'failure'
       end
-       # render all details about the charge
-       # before authorizing the payment. 
     else
       render :new
     end
