@@ -58,6 +58,7 @@ GEM
     bcrypt (3.1.11)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    bootstrap_progressbar (0.2.0)
     bower-rails (0.10.0)
     builder (3.2.2)
     byebug (9.0.5)
@@ -408,6 +409,7 @@ PLATFORMS
 DEPENDENCIES
   activemerchant
   bootstrap-sass (= 3.2.0.0)
+  bootstrap_progressbar
   bower-rails (~> 0.10.0)
   byebug
   carrierwave

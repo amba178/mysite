@@ -1,15 +1,25 @@
 -provide(:title, 'Donation')
 .row
-	.col-xs-offset-3.col-xs-6
+	.col-xs-3.progress-status
+		.panel.panel-info 
+			.panel-heading.text-center 
+				Target Amount: $ 5000.00
+			.panel-body
+				.col-xs-11
+					.progress 
+						= progress_bar (Charge.pluck(:amount).reduce(:+)/5000.0), label: true, alternative: 'success', striped: true, active: true
+		
+	.col-xs-6
 		.panel.panel-info 
 			.panel-heading.text-center Secure Payment Info 
 			.panel-body
-				.col-xs-offset-2.col-xs-9
-					=form_for @charge do |f| 
+				=form_for @charge do |f| 
+					.col-xs-offset-2.col-xs-9
 						= render 'shared/error_messages', object: f.object
 						-if @charge.errors.any?
 							%hr
-						- opts = [["Visa", "visa"], ["MasterCard", "mastercard"], ["Discover", "discover"], ["American Express", "american_express"]]
+					- opts = [["Visa", "visa"], ["MasterCard", "mastercard"], ["Discover", "discover"], ["American Express", "american_express"]]
+					.col-xs-offset-2.col-xs-9
 						-# .center-block
 						= fa_icon "cc-mastercard",class: 'fa-3x center-block'
 						-# =f.radio_button :card_type, 'discover'
@@ -19,15 +29,18 @@
 						-# =f.radio_button :card_type, 'amex'
 						= fa_icon "cc-amex", class: 'fa-3x'
 						%hr
-						.form-group.credit-top-margin
-							=f.label :name, "Name(as it appears on your card)", class: 'charges-label' 
+					.form-group.credit-top-margin
+						.col-xs-offset-2.col-xs-9
+							=f.label :name, "Name(as it appears on your card)", class: 'charges-label'
 							=f.text_field :name, class: 'form-control'
 
-						.form-group
+					.form-group
+						.col-xs-offset-2.col-xs-9
 							=f.label :card_number, "Card number(no dashes or spaces)", class: 'charges-label'
 
 							=f.text_field :card_number, class: 'form-control' 
-						.form-group
+					.form-group
+						.col-xs-offset-2.col-xs-9
 							=f.label :card_type, class: 'charges-label' 
 							%br 
 							=f.select :card_type, opts, class: 'select-margin'
@@ -36,13 +49,15 @@
 							%br
 							=f.date_select :card_expires_on,:order => [:month, :year], :start_year => Date.today.year, :end_year => (Date.today.year + 12), add_month_numbers: true, :discard_day => true
 
-						.form-group 
+					.form-group 
+						.col-xs-offset-2.col-xs-9
 							=f.label :card_verification_value, 'Security code (3 on back, Amex: 4 on front)', class: 'charges-label'
-						
+					
 							=f.text_field :card_verification_value, class: 'form-control cvv'
 							%span 
 								=image_tag 'cvv3.png', class: "img-responsive"
-						.form-group
+					.form-group
+						.col-xs-offset-2.col-xs-9
 							=f.label :amount, class: 'charges-label'
 							.input-group 
 								.input-group-addon $
@@ -50,8 +65,9 @@
 								.input-group-addon .00
 
 
-						.button-group 
+					.button-group
+						.col-xs-offset-2.col-xs-9 
 							=f.submit 'Donate', class: 'btn btn-default btn-block btn-donate',  data: { disable_with: "Processing wait...." }
-			.panel-info.panel-footer.text-center
-				Thank you
+			-# .panel-info.panel-footer.text-center
+			-# 	Thank you
 
