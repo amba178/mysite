@@ -10,6 +10,7 @@ class ChargesController < ApplicationController
     if @charge.save
       if @charge.purchase
         current_user.charges << @charge  if current_user 
+        ChargeMailer.charge_confirmation(current_user, ChargeTransaction.last.params).deliver 
         render  'success'
       else
         render  'failure'

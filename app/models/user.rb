@@ -41,6 +41,10 @@ class User < ApplicationRecord
    end
  end
 
+ def name
+  "#{first_name} #{last_name}"
+ end
+
  # def password_required? 
  # 	super && provider.blank?
  # end

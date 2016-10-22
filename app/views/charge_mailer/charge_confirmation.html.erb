@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Develop Sagan</title>
+  <style type="text/css">
+    body, p{
+      color: #000000;
+      font-size: 12px;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .divider {
+      background-color: #555555;
+      height: 2px;
+    }
+    .episode h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .episode p {
+      margin: 8px 0;
+    }
+    .episode img {
+      border: solid 1px #777777;
+    }
+    .episode .duration {
+      font-size: 11px;
+      color: #555555;
+    }
+    #footer {
+      font-size: 11px;
+      color: #555555;
+    }
+    #footer a {
+      color: #555555;
+    }
+  </style>
+</head>
+<body>
+ <p> 
+  <h2> 
+   Mr/Miss <%= @user.name%> 
+  <h2>
+  We would like to give our gratitude for generousity and most importantly we thank you for 
+  taking a step for this cause.
+  If you would like to participate fully, you can reach us at <%=mail_to("salemabma@gmail.com")%> .
+ 
+  <ul> 
+   <li>Donation processed at: <%=@date %>  </li>
+   <li> Donation amount: <%=number_to_currency(@params['amount']) %> </li>
+   <li> Donation reference number: <%=@params['transaction_id'] %> </li>
+
+  </ul> 
+
+ </p> 
+</body>
+</html>

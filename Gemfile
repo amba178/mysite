@@ -39,6 +39,7 @@ gem 'countries'
 gem 'tzinfo', '~> 1.2', '>= 1.2.2'
 gem 'credit_card_icons'
 gem 'bootstrap_progressbar'
+gem 'roadie', '~> 3.1.1'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
