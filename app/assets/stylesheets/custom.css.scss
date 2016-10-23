@@ -226,8 +226,7 @@ p#share-paragraph{
 }
 
 .glyphicon-user {
-  color: #6b15a1;
-
+    color: #fff;
 }
 .glyphicon-lock{
   color:  #6b15a1;
@@ -394,6 +393,9 @@ fieldset[disabled] .btn-default.active {
 }
 .img-responsive{
   display: inline;
+}
+.progress-bar{
+  color: #ADFF2F;
 }
 
 /*hr{

@@ -6,12 +6,12 @@
 				Target Amount: $ 5000.00
 			.panel-body
 				.col-xs-11
-					-total_charge = Charge.pluck(:amount).reduce(:+)
+					-total_charge = !Charge.pluck(:amount).reduce(:+).nil? ? Charge.pluck(:amount).reduce(:+) : 0 
 					-target_charge = 5000.00
 					-if total_charge > target_charge
 						total_charge = target_charge 
 					.progress
-						 
+					   
 						= progress_bar (total_charge/target_charge), label: true, alternative: 'success', striped: true, active: true
 		
 	.col-xs-6
