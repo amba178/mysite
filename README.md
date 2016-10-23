@@ -1,3 +1,3 @@
 # Develop Sagan
 
-will update!
+Developer site application, http://www.developsagan.com
