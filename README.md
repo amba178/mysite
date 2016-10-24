@@ -1,3 +1,3 @@
 # Develop Sagan
 
-Developer site application, http://www.developsagan.com
+Developer site, http://www.developsagan.com
