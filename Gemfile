@@ -25,6 +25,7 @@ gem 'rmagick'
 gem "fog"
 gem "carrierwave"
 gem 'carrierwave_direct'
+gem 'carrierwave-aws'
 gem 'sidekiq'
 gem 'activemerchant'
 gem 'less-rails-bootstrap'
@@ -34,7 +35,7 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
 gem "font-awesome-rails"
 gem 'simple_form'
 gem "figaro"
-gem 'meta-tags'
+gem 'metamagic'
 gem 'countries'
 gem 'tzinfo', '~> 1.2', '>= 1.2.2'
 gem 'credit_card_icons'

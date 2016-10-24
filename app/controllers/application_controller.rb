@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :after_sign_in_path_for, :after_sign_out_path_for, if: :devise_controller? 
-  before_action :prepare_meta_tags, if: 'request.get?'
+  # before_action :prepare_meta_tags, if: 'request.get?'
 
 
   def prepare_meta_tags(options={})

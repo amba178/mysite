@@ -2,18 +2,26 @@
 .row.well.well-lg#gallery-index
 	-@photos.each do |photo|
 		.col-sm-6.col-lg-4.col-md-4.col-xs-12.img-responsive
-			%h4{class: "text-center google-font-tangerine"}
-				=photo.name
-			= image_tag photo.image_url(:thumb).to_s, class: 'img-thumbnail'
-			%p{id: 'share-paragraph'}
-				=link_to "https://twitter.com/intent/tweet?url=http://localhost:3000/photos/1", class: 'btn btn-primary btn-xs btn-share' do 
-					%sapn Share
-					=fa_icon 'twitter', class: 'fa-1x'
-				=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share' do 
-					%sapn Share
-					=fa_icon 'facebook', class: 'fa-1x'
+			-if photo.image_processed? 
+				%h4{class: "text-center google-font-tangerine"}
+					=photo.name
+				= image_tag photo.image_url(:thumb).to_s, class: 'img-thumbnail'
+				%p{id: 'share-paragraph'}
+					=link_to "https://twitter.com/intent/tweet?url=#{photo.image_url(:thumb).to_s}", class: 'btn btn-primary btn-xs btn-share' do 
+						%span Share
+						=fa_icon 'twitter', class: 'fa-1x'
+					=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share' do 
+						%span Share
+						=fa_icon 'facebook', class: 'fa-1x'
+			-else 
+				%em Processing...
 - if user_signed_in?
-	=link_to 'upload photo', new_photo_path, class: 'pull-right'
+	= direct_upload_form_for @uploader do |f|
+		.col-xs-3.pull-right
+			= f.file_field :image 
+	
+			=f.submit "Upload Image", class: 'btn btn-xs btn-primary btn-block'
+	-# =link_to 'upload photo', new_photo_path, class: 'pull-right'
 
 
 
