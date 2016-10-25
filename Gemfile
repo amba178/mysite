@@ -44,6 +44,10 @@ gem 'roadie', '~> 3.1.1'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
+group :production do 
+	gem 'pg'
+end
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "letter_opener" 
