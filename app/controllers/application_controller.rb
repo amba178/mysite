@@ -3,6 +3,19 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :after_sign_in_path_for, :after_sign_out_path_for, if: :devise_controller? 
   # before_action :prepare_meta_tags, if: 'request.get?'
+  
+
+  helper_method   :full_title
+
+
+  def full_title(page_title='')
+    base_title = "Develop Sagan"
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
+    end
+  end
 
 
   protected
