@@ -45,7 +45,7 @@ gem 'roadie', '~> 3.1.1'
 
 group :production do 
 	gem 'pg'
-	# gem 'rails_12factor', '0.0.2'
+	gem 'rails_12factor', '0.0.2'
 end
 
 group :development, :test do
