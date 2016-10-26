@@ -12,8 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/public/uploads/tmp
-/public/uploads/photo/image
+/public/uploads
 
 # Dev Machines
 .DS_Store
