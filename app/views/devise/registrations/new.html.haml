@@ -13,6 +13,6 @@
         = f.input :password_confirmation
       .form-group 
         = f.button :button, class: 'btn btn-primary btn-block' do 
-          %span{class: "glyphicon glyphicon-user", aria: {hidden: "true"}} 
+          %span= fa_icon "user",class: 'fa-1x'
           Sign up
     = render "devise/shared/links"
