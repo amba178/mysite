@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@developsaga.com'
+  default from: 'salemamba@gmail.com'
   # include Roadie::Rails::Automatic
 
   # layout 'mailer'
