@@ -5,42 +5,6 @@ class ApplicationController < ActionController::Base
   # before_action :prepare_meta_tags, if: 'request.get?'
 
 
-  def prepare_meta_tags(options={})
-  	site_name = "SaganDevelop"
-  	title = 'Sagan photo'
-  	description = 'Develop sagan area'
-  	image = options[:image] 
-  	current_url = request.url 
-
-  	defaults = {
-      site:        site_name,
-      title:       title,
-      image:       image,
-      description: description,
-      keywords:    %w[web software development mobile app],
-      twitter: {
-        site_name: site_name,
-        site: '@salemA6',
-        card: 'summary',
-        description: description,
-        image: image
-      },
-      og: {
-        url: current_url,
-        site_name: site_name,
-        title: title,
-        image: image,
-        description: description,
-        type: 'website'
-      }
-    }
-
-    options.reverse_merge!(defaults)
-    set_meta_tags options
-
-  end
-
-
   protected
 
   # def local_request?
