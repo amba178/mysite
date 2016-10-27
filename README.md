@@ -1,3 +1,3 @@
 # Develop Sagan
 
-Developer site, http://www.developsagan.com
+Developer site, https://develop-sagan.herokuapp.com/
