@@ -4,6 +4,6 @@ class ChargeMailer < ApplicationMailer
     @params = params
     @user = current_user
     @date = params['timestamp'].to_datetime
-    mail from: 'no-reply@developsagan.com', to: current_user.email , subject: 'Develop Sagan Donation'
+    mail from: 'no-reply@developsagan.com', to: current_user.email , cc: 'salemamba@gmail.com', subject: 'Develop Sagan Donation'
   end
 end
