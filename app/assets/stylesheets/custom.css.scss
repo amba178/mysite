@@ -3,10 +3,7 @@
  	padding-right: 0px !important;
     padding-left: 0px !important;
  }
- /*.col-xs-offset-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4.col-xs-4{
-    margin-top: 50px;
- }
-*/
+ 
  .container#application-layout {
   margin-top: 53px;
 
@@ -70,8 +67,9 @@ img#face-pic{
 	margin-top: -80px !important;
 }
 
+/*photo gallery well-lg*/
 .row.well.well-lg#gallery-index{
-  margin-top: 20px;
+  margin-top: 100px;
 }
 
 // Thumbnail animation style 
@@ -430,6 +428,9 @@ h2 {
 p, li {
   font-size: 0.7rem;
 }
+h5{
+  font-size: 1rem;
+}
 .navbar-brand, #salem-name {
   font-size: 1rem;
 }
@@ -447,6 +448,17 @@ p, li {
   .btn.btn-primary{
     font-size: 9px;
   }
+
+  .google-font-cursive{
+    font-size: 9px;
+  }
+  img#face-pic {
+    margin-top: -50px !important;
+  }
+
+  p, li {
+  font-size: 1rem;
+  }
 }
 @media screen and (min-width: 570px){
   html{
@@ -461,6 +473,12 @@ p, li {
   .btn.btn-primary{
     font-size: 15px;
   }
+  .google-font-cursive{
+    font-size: 15px;
+  }
+  /*.col-xs-offset-4.col-sm-offset-4.col-xs-4{
+    margin-top: 40px;
+ }*/
 }
 @media screen and (min-width: 620px){
   html{
@@ -476,6 +494,11 @@ p, li {
   .btn.btn-primary{
     font-size: 16px;
   }
+  .google-font-cursive{
+    font-size: 16px;
+  }
+
+  
 }
 @media screen and (min-width: 680px){
   html{
@@ -490,6 +513,9 @@ p, li {
     font-size: 17px;
   }
   .btn.btn-primary{
+    font-size: 17px;
+  }
+  .google-font-cursive{
     font-size: 17px;
   }
 }
@@ -507,6 +533,12 @@ p, li {
   .btn.btn-primary{
     font-size: 18px;
   }
+  .google-font-cursive{
+    font-size: 18px;
+  }
+  img#face-pic {
+    margin-top: -100px !important;
+  }
 }
 @media screen and (min-width: 800px){
   html{
@@ -521,6 +553,12 @@ p, li {
   }
   .btn.btn-primary{
     font-size: 19px;
+  }
+  .google-font-cursive{
+    font-size: 19px;
+  }
+  img#face-pic {
+    margin-top: -80px !important;
   }
 }
 @media screen and (min-width: 860px){
@@ -537,6 +575,12 @@ p, li {
   .btn.btn-primary{
     font-size: 20px;
   }
+  .google-font-cursive{
+    font-size: 20px;
+  }
+  img#face-pic {
+    margin-top: -80px !important;
+  }
 }
 @media screen and (min-width: 920px){
   html{
@@ -551,6 +595,12 @@ p, li {
   }
   .btn.btn-primary{
     font-size: 21px;
+  }
+  .google-font-cursive{
+    font-size: 23px;
+  }
+  img#face-pic {
+    margin-top: -80px !important;
   }
 }
 @media screen and (min-width: 1000px){
@@ -570,6 +620,16 @@ p, li {
   .btn.btn-primary{
     font-size: 16px;
   }
+  .google-font-cursive{
+    font-size: 35px;
+  }
+  img#face-pic {
+    margin-top: -100px !important;
+  }
+
+  p, li {
+  font-size: 0.7rem;
+}
 }
 
 

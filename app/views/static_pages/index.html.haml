@@ -1,7 +1,10 @@
 -provide(:title, 'home')
 =image_tag "background_2.jpg", class: "img-fluid img-responsive" ,alt: "Responsive image"
 .row
-	=image_tag "salem_face3.jpg", id: "face-pic", class: "img-circle img-fluid img-responsive", alt: "Responsive image"
+	-# .col-lg-4.col-lg-offset-1 
+	-# 	salem
+	.col-sm-4.col-sm-offset-4.col-xs-offset-4.col-xs-4.col-md-4.col-md-offset-5
+		=image_tag "salem_face3.jpg", id: "face-pic", class: "img-circle img-fluid img-responsive", alt: "Responsive image"
 
 .panel-body.text-center 
 	%h5.panel-title
