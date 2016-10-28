@@ -10,11 +10,12 @@
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster|Pacifico"  
 	%body
 		=render 'shared/header'
-		.container#application-layout
+		.row
 			-flash.each do |key, msg|
 				- unless key =='timedout'
 					= content_tag :aside, msg, class: "alert alert-#{key == 'notice' ? 'info' : 'danger'}"
 					%a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"} &times;
+		.container
 			= yield
 			-# = debug(params) if Rails.env.development? 
 		=render 'shared/footer'
