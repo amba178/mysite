@@ -242,6 +242,16 @@ p#share-paragraph{
   font-weight: normal;
 }
 
+/* sign-up page */
+#sign-up{
+  margin-top: 80px;
+}
+
+/* session page */
+#sessions{
+  margin-top: 80px;
+}
+
 /* form errors css */
 .field_with_errors .form-control {
    border-color: #a94442;
@@ -413,6 +423,11 @@ fieldset[disabled] .btn-default.active {
 
 .progress-status{
   margin-top: 30%;
+}
+
+
+#flashrow{
+  margin-top: 15px;
 }
 
 
