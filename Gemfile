@@ -49,7 +49,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'byebug'
   gem "letter_opener" 
   gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
