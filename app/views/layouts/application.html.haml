@@ -11,7 +11,7 @@
 		= render 'layouts/shim'
 	%body
 		=render 'shared/header'
-		.container
+		.container#application-layout
 			-flash.each do |key, msg|
 				- unless key =='timedout'
 					= content_tag :aside, msg, class: "alert alert-#{key == 'notice' ? 'info' : 'danger'}"

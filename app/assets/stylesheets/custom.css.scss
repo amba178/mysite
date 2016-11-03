@@ -218,11 +218,11 @@ p#share-paragraph{
 
 
 .alert-danger {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .alert-info{
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .glyphicon-user {
@@ -242,18 +242,22 @@ p#share-paragraph{
   font-weight: normal;
 }
 
+#photo-well{
+  margin-top: 40px;
+}
+
 /* sign-up page */
 #sign-up{
-  margin-top: 80px;
+  margin-top: 0px;
 }
 /* edit-register*/
 #edit-register {
-  margin-top: 80px;
+  margin-top: 0px;
 }
 
 /* session page */
 #sessions{
-  margin-top: 80px;
+  margin-top: 0px;
 }
 
 /* form errors css */

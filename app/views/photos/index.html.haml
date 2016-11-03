@@ -1,6 +1,6 @@
 -provide(:title, "Photos")
-.clear-fix
-.row.well.well-lg#gallery-index
+
+.row.well.well-lg#photo-well
 	-@photos.each do |photo|
 		.col-sm-6.col-lg-4.col-md-4.col-xs-12.img-responsive
 			-if photo.image_processed? 
