@@ -218,11 +218,11 @@ p#share-paragraph{
 
 
 .alert-danger {
-  margin-top: 18px;
+  margin-top: 60px;
 }
 
 .alert-info{
-  margin-top: 18px;
+  margin-top: 60px;
 }
 
 .glyphicon-user {
@@ -244,6 +244,10 @@ p#share-paragraph{
 
 /* sign-up page */
 #sign-up{
+  margin-top: 80px;
+}
+/* edit-register*/
+#edit-register {
   margin-top: 80px;
 }
 
@@ -452,7 +456,7 @@ h5{
 
 @media screen and (min-width: 290px){
   html{
-    font-size: 9px;
+    font-size: 5px;
   }
   .control-label {
     font-size: 9px;
@@ -471,9 +475,14 @@ h5{
     margin-top: -50px !important;
   }
 
+
   p, li {
   font-size: 1rem;
   }
+
+  #footer-absolute{
+    position: relative;
+ }
 }
 @media screen and (min-width: 570px){
   html{
@@ -645,6 +654,10 @@ h5{
   p, li {
   font-size: 0.7rem;
 }
+
+#footer-absolute{
+    position: absolute;
+ }
 }
 
 
