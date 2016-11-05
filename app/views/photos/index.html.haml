@@ -18,7 +18,7 @@
 				%em Processing...
 - if user_signed_in?
 	= direct_upload_form_for @uploader do |f|
-		.col-xs-4.pull-right
+		.col-xs-4.pull-right 
 			= f.file_field :image 
 	
 			=f.submit "Upload Image", class: 'btn btn-xs btn-primary btn-block'
