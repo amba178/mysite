@@ -492,6 +492,12 @@ h5{
   p, li {
   font-size: 1rem;
   }
+  input[type='file']{
+    font-size: 7px;
+  }
+  #footer-absolute{
+    position: relative;
+  }
 }
 @media screen and (min-width: 570px){
   html{
@@ -667,6 +673,10 @@ h5{
 #footer-absolute{
     position: absolute;
  }
+
+ input[type='file']{
+    font-size: 15px;
+  }
 
 }
 
