@@ -153,6 +153,9 @@ btn btn-primary btn-xs#btn-share{
   content: ' |';
   color: #337ab7;
 }*/
+#remember_me.form-group{
+  margin-bottom: 0px !important;
+}
 ul.devise-shard-list{
   padding-left: 0px;
 }
@@ -160,7 +163,7 @@ ul.devise-shard-list{
   display: inline-block;
   list-style: none;
   color: #337ab7;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 
 }
 p#share-paragraph{
@@ -495,9 +498,7 @@ h5{
   input[type='file']{
     font-size: 7px;
   }
- /* #footer-absolute{
-    position: relative;
-  }*/
+
 }
 @media screen and (min-width: 570px){
   html{
