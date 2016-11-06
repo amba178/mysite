@@ -1,4 +1,4 @@
-%footer{:id => [(controller_name =='photos' && action_name=='index' && Photo.all.size > 3 || !flash['notice'].nil? || controller_name=='registrations' || controller_name=='charges')  ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
+%footer{:id => [(controller_name =='photos' && action_name=='index' && Photo.all.size > 3 || !flash['notice'].nil? || controller_name=='registrations' || controller_name=='charges' || !(controller_name=='static_pages' ||controller_name=='sessions'))  ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
 	%div{:class => 'container'}
 		%ul{class: "footer-list"}
 			%li{class: "footer-list-item"}
