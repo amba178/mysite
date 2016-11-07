@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show]
   def index
     @photos = Photo.all 
     # @photos.each do |photo|
@@ -52,7 +52,7 @@ class PhotosController < ApplicationController
 
   private 
   	def photo_params
-  		params.require(:photo).permit(:name, :image, :key, :image_processed)
+  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description)
   	end
 
 
