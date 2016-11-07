@@ -8,7 +8,7 @@
 					=photo.name
 				= image_tag photo.image_url(:thumb).to_s, class: 'img-thumbnail'
 				
-				- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{image_tag(photo.image_url(:thumb).to_s)}" }
+				- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{photo.image_url(:thumb).to_s}" }
 
 				%p{id: 'share-paragraph'}
 					=link_to "https://twitter.com/intent/tweet?url=#{photo.image_url(:thumb).to_s}", class: 'btn btn-primary btn-xs btn-share' do 
