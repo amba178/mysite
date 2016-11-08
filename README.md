@@ -1,3 +1,3 @@
 # Develop Sagan
 
-Developer site, optimzed for small devices.  https://develop-sagan.herokuapp.com/
+Developer site, optimized for small devices.  https://develop-sagan.herokuapp.com/
