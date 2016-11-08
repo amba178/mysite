@@ -264,6 +264,30 @@ p#share-paragraph{
   margin-top: 0px;
 }
 
+
+/* temp css for disabling*/
+.btn-primary.disabled, .btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled.focus, 
+.btn-primary.focus[disabled],
+ fieldset[disabled] .btn-primary.focus, 
+ .btn-primary.disabled:active, 
+ .btn-primary[disabled]:active, fieldset[disabled] 
+ .btn-primary:active, .btn-primary.disabled.active, 
+ .btn-primary.active[disabled], 
+ fieldset[disabled] .btn-primary.active {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+/*end of temp css*/
+
 /* form errors css */
 .field_with_errors .form-control {
    border-color: #a94442;
@@ -382,6 +406,13 @@ img#nav-iamge{
   background-color: #32CD32;
   border-color: #32CD32;
   color: #fff;
+}
+
+.disabled{
+   background-color: #337ab7;
+   border-color: #337ab7;
+   color: #fff;
+
 }
 
 

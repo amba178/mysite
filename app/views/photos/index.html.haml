@@ -14,7 +14,7 @@
 					=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos", class: 'btn btn-primary btn-xs btn-share' do 
 						%span Share
 						=fa_icon 'twitter', class: 'fa-1x'
-					=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share' do 
+					=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share disabled' do 
 						%span Share
 						=fa_icon 'facebook', class: 'fa-1x'
 			-else 
