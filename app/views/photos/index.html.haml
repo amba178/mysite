@@ -11,7 +11,7 @@
 				- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{photo.image_url(:thumb).to_s}" }
 
 				%p{id: 'share-paragraph'}
-					=link_to "https://twitter.com/intent/tweet?url=#{photo.image_url(:thumb).to_s}", class: 'btn btn-primary btn-xs btn-share' do 
+					=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos", class: 'btn btn-primary btn-xs btn-share' do 
 						%span Share
 						=fa_icon 'twitter', class: 'fa-1x'
 					=link_to photo_path(photo.id), class: 'btn btn-primary btn-xs btn-share' do 
