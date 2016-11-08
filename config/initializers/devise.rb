@@ -251,6 +251,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'], callback_url: 'http://127.0.0.1:3000/'
+  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET']
 
 
   # ==> Warden configuration

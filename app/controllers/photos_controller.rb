@@ -1,30 +1,13 @@
 class PhotosController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+  before_action :set_photo, :only => [:show]
   def index
     @photos = Photo.all 
-    # @photos.each do |photo|
-    #   if photo.image_processed 
-    #     prepare_meta_tags(title: photo.name,
-    #                    description: "sagan photo",
-    #                    keywords: 'Sagan',
-    #                    url: photo.image_url(:thumb),
-    #                    image: photo.image_url(:thumb),
-    #                    twitter: {card: "summary_large_image"})
-    #   end
-
-    # end
     @uploader = Photo.new.image 
     @uploader.success_action_redirect = new_photo_url 
   end
 
   def show
-    @photo = Photo.find(params[:id])
-    # prepare_meta_tags(title: @photo.name,
-    #                   description: "sagan photo",
-    #                   keywords: 'Sagan',
-    #                   url: @photo.image_url(:thumb),
-    #                   image: @photo.image_url(:thumb),
-    #                   twitter: {card: "summary_large_image"})
   end
 
   def new
@@ -54,6 +37,10 @@ class PhotosController < ApplicationController
   	def photo_params
   		params.require(:photo).permit(:name, :image, :key, :image_processed, :description)
   	end
+
+    def set_photo
+      @photo = Photo.find(params[:id])
+    end
 
 
 
