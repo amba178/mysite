@@ -7,10 +7,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :timeoutable,
-         :lockable, :omniauthable
+         :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
    validates_presence_of :first_name, :last_name, :email
-   validates_presence_of :password, :on => :create 
-   validates_presence_of :password_confirmation, :on => :create  
+   # after_create :skip_confirmation_auth 
+   # validates_presence_of :password, :on => :create 
+   # validates_presence_of :password_confirmation, :on => :create  
 
    def total_donation
      charges.pluck(:amount).reduce(:+) 
@@ -21,12 +22,14 @@ class User < ApplicationRecord
     	user.email = auth.info.email
     	user.uid = auth.uid
     	user.provider = auth.provider
-    	user.nickname = auth.info.nickname 
-    	user.first_name = auth.info.name.split(' ')[0]
-    	user.last_name = auth.info.name.split(' ')[1]
+      user.auth_token = auth.credentials.token
+    	user.nickname = auth.provider == 'twitter' ?  auth.info.nickname : auth.info.name
+    	user.first_name = auth.info.name.split.first
+    	user.last_name = auth.info.name.split.last
     	# user.password = Devise.friendly_token[0,20]
     	# user.first_name = auth.info.name   # assuming the user model has a name
     	user.image = auth.info.image # assuming the user model has an image
+
  	 end
   end
 
@@ -45,18 +48,42 @@ class User < ApplicationRecord
   "#{first_name} #{last_name}"
  end
 
- # def password_required? 
- # 	super && provider.blank?
- # end
 
- # def update_with_password(params, *options)
- # 	if encrypted_password.blank?
- # 		update_attributes(params, *options)
- # 	else
- # 		super
- # 	end
 
- # end
+
+def facebook
+  @facebook ||= Koala::Facebook::API.new(auth_token)
+    block_given? ? yield(@facebook) : @facebook
+  rescue Koala::Facebook::APIError => e
+    logger.info e.to_s
+   nil # or consider a custom null object
+end
+
+def friends_count
+  facebook { |fb| fb.get_connection("me", "friends").size }
+end
+
+
+
+ def password_required? 
+ 	super && provider.blank?
+ end
+
+ def update_with_password(params, *options)
+ 	if encrypted_password.blank?
+ 		update_attributes(params, *options)
+ 	else
+ 		super
+ 	end
+
+ end
+
+ def skip_confirmation_auth 
+  if self.provider
+     self.skip_confirmation_notification! 
+     self.confirmed_at = Time.now
+  end
+ end
 
  # def update_without_password(params, *options)
  # 	if encrypted_password.blank? 

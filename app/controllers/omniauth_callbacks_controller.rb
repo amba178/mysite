@@ -1,7 +1,8 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController 
 	def all
-		@user = User.from_omniauth(request.env["omniauth.auth"])
-            # raise request.env["omniauth.auth"].to_yaml 
+		 @user = User.from_omniauth(request.env["omniauth.auth"])
+        # raise request.env["omniauth.auth"].to_yaml 
+        # byebug
     	if @user.persisted? 
     		flash.notice = 'Signed in' if @user.confirmed_at 
      	 	sign_in_and_redirect @user  #, :event => :authentication #this will throw if @user is not activated
@@ -17,7 +18,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	# 	redirect_to root_path 
 	# end
 
-	alias_method :twitter, :all 
+	alias_method :twitter, :all
+    alias_method :facebook, :all  
 
 
 end

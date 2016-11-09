@@ -8,8 +8,10 @@
       = f.input :first_name
       = f.input :last_name 
       = f.input :email 
-      = f.input :password
-      = f.input :password_confirmation
+      -if f.object.password_required?
+
+        = f.input :password
+        = f.input :password_confirmation
       .form-group 
         = f.button :button, class: 'btn btn-primary btn-block' do 
           %span{class: "glyphicon glyphicon-user reg-user", aria: {hidden: "true"}} 

@@ -42,6 +42,8 @@ gem 'credit_card_icons'
 gem 'bootstrap_progressbar'
 gem 'roadie', '~> 3.1.1'
 gem "koala", "~> 2.2"
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
