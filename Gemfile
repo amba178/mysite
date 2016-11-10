@@ -44,6 +44,7 @@ gem 'roadie', '~> 3.1.1'
 gem "koala", "~> 2.2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'ancestry'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 

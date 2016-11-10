@@ -10,8 +10,8 @@ class User < ApplicationRecord
          :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
    validates_presence_of :first_name, :last_name, :email
    # after_create :skip_confirmation_auth 
-   # validates_presence_of :password, :on => :create 
-   # validates_presence_of :password_confirmation, :on => :create  
+    validates_presence_of :password, :on => :create 
+    validates_presence_of :password_confirmation, :on => :create  
 
    def total_donation
      charges.pluck(:amount).reduce(:+) 
@@ -65,18 +65,18 @@ end
 
 
 
- def password_required? 
- 	super && provider.blank?
- end
+ # def password_required? 
+ # 	super && provider.blank?
+ # end
 
- def update_with_password(params, *options)
- 	if encrypted_password.blank?
- 		update_attributes(params, *options)
- 	else
- 		super
- 	end
+ # def update_with_password(params, *options)
+ # 	if encrypted_password.blank?
+ # 		update_attributes(params, *options)
+ # 	else
+ # 		super
+ # 	end
 
- end
+ # end
 
  def skip_confirmation_auth 
   if self.provider

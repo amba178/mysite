@@ -8,10 +8,13 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @post = Post.new 
   end
 
   def new
   	@photo = Photo.new(key: params[:key])
+    
+
   end
 
   def create
@@ -41,8 +44,6 @@ class PhotosController < ApplicationController
     def set_photo
       @photo = Photo.find(params[:id])
     end
-
-
 
 
 end

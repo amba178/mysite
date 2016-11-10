@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'index/show'
+
+  get 'index/edit'
+
+  get 'index/new'
+
   root to: 'static_pages#index'
   resources :photos, :charges  
   match 'about', to: 'static_pages#about', via: 'get'
