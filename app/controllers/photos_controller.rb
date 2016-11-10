@@ -13,8 +13,6 @@ class PhotosController < ApplicationController
 
   def new
   	@photo = Photo.new(key: params[:key])
-    
-
   end
 
   def create

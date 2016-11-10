@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'posts/index'
+
+  get 'posts/show'
+
+  get 'posts/edit'
+
+  get 'posts/new'
+
   get 'index/show'
 
   get 'index/edit'
