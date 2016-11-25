@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @post = Post.new 
+    @post = Post.new
   end
 
   def new

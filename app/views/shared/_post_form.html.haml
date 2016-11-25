@@ -1,0 +1,6 @@
+= form_for @post do |f|
+	=render 'shared/error_messages', object: f.object
+	.form-group
+		=f.label :content , "Comment"
+		=f.text_area :content, cols: 4, class: 'form-control', rows: 8, placeholder: 'Compose new post.....'
+		=f.submit "Post", class: 'btn btn-primary'

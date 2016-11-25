@@ -8,6 +8,14 @@ class PostsController < ApplicationController
   def edit
   end
 
-  def new
+  def create
   end
+
+  def update
+  end
+
+  private
+  	def post_params
+  		params.require(:post).permit(:content)
+  	end
 end

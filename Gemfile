@@ -21,6 +21,7 @@ gem 'rmagick'
 gem 'jquery-turbolinks'
 # gem 'active_record-acts_as'
 # gem "fog-aws"
+gem 'localtunnel'
 
 gem "fog"
 gem "carrierwave"
