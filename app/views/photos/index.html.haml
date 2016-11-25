@@ -7,28 +7,29 @@
 				%h4{class: "text-center google-font-tangerine"}
 					=photo.name
 				= image_tag photo.image_url(:thumb).to_s, class: 'img-thumbnail'
+				=link_to "Comment/Share on social media", photo_path(photo.id),id: 'photo-show-page'
 				
 				- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{photo.image_url(:thumb).to_s}" }
 
-				%p{id: 'share-paragraph'}
-					-if user_signed_in? && current_user.provider=="twitter"
-						=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos", class: 'btn btn-primary btn-xs btn-share' do 
-							%span Tweet
-							=fa_icon 'twitter', class: 'fa-1x'
-							=link_to "Comment/Share on social media", photo_path(photo.id)
-					-elsif user_signed_in? && current_user.provider=="facebook"
-						=link_to current_user.facebook.put_picture(photo.image_url, {message: photo.description}), class: "btn btn-primary btn-xs btn-share" do 
-							%span Post
-							=fa_icon 'facebook', class: 'fa-1x'
-							=link_to "Comment/Share on social media", photo_path(photo.id)
-					-else 
-						=link_to "#", class: "btn btn-primary btn-xs btn-share disabled" do 
-							%span Post 
-							=fa_icon 'facebook', class: 'fa-1x'
-						=link_to "#", class: "btn btn-primary btn-xs btn-share disabled" do 
-							%span Tweet 
-							=fa_icon 'twitter', class: 'fa-1x'
-						=link_to "Comment/Share on social media", photo_path(photo.id)
+				-# %p{id: 'share-paragraph'}
+				-# 	-if user_signed_in? && current_user.provider=="twitter"
+				-# 		=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos", class: 'btn btn-primary btn-xs btn-share' do 
+				-# 			%span Tweet
+				-# 			=fa_icon 'twitter', class: 'fa-1x'
+				-# 		=link_to "Comment/Share on social media", photo_path(photo.id)
+				-# 	-elsif user_signed_in? && current_user.provider=="facebook"
+				-# 		=link_to current_user.facebook.put_picture(photo.image_url, {message: photo.description}), class: "btn btn-primary btn-xs btn-share" do 
+				-# 			%span Post
+				-# 			=fa_icon 'facebook', class: 'fa-1x'
+				-# 		=link_to "Comment/Share on social media", photo_path(photo.id)
+				-# 	-else 
+				-# 		=link_to "#", class: "btn btn-primary btn-xs btn-share disabled" do 
+				-# 			%span Post 
+				-# 			=fa_icon 'facebook', class: 'fa-1x'
+				-# 		=link_to "#", class: "btn btn-primary btn-xs btn-share disabled" do 
+				-# 			%span Tweet 
+				-# 			=fa_icon 'twitter', class: 'fa-1x'
+				-# 		=link_to "Comment/Share on social media", photo_path(photo.id)
 			-else 
 				%em Processing...
 - if user_signed_in?
