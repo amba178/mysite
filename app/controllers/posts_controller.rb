@@ -9,6 +9,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
+    if @post.save
+
+    else
+     @photo = Photo.find(params[:post][:photo_id])
+     render "photos/show" 
+    end
   end
 
   def update
@@ -16,6 +23,6 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-  		params.require(:post).permit(:content)
+  		params.require(:post).permit(:content, :photo_id)
   	end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125203823) do
+ActiveRecord::Schema.define(version: 20161126003004) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -54,7 +54,9 @@ ActiveRecord::Schema.define(version: 20161125203823) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "ancestry"
+    t.integer  "photo_id"
     t.index ["ancestry"], name: "index_posts_on_ancestry", using: :btree
+    t.index ["photo_id"], name: "index_posts_on_photo_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

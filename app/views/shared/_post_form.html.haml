@@ -2,6 +2,7 @@
 	=render 'shared/error_messages', object: f.object
 	.form-group
 		=f.label :content , "Comment"
+		=f.hidden_field :photo_id, :value =>  params[:id]
 		%br
 		=f.text_area :content, cols: 4, class: 'form-control', rows: 8, placeholder: 'Compose new comment.....'
 	=f.submit "Post", class: 'btn btn-primary btn-block'

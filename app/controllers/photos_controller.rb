@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @post = Post.new
+    @post = Post.new()
   end
 
   def new
@@ -40,7 +40,9 @@ class PhotosController < ApplicationController
   	end
 
     def set_photo
-      @photo = Photo.find(params[:id])
+      @photo = Photo.find(params[:id]) if !params[:id].nil?
+
+      @photo = Photo.find(params[:post][:photo_id]) if !params[:post].nil?
     end
 
 

@@ -11,7 +11,7 @@
 					=link_to "Hometown Photo Gallery", photos_url
 -else
 
-	%footer{:id => [((controller_name =='photos' && action_name=='index' && Photo.all.size > 3 || !flash['notice'].nil?) || controller_name =='photos' && ['show'].include?(action_name) || controller_name=='registrations' && !['show','edit'].include?(action_name)|| controller_name=='charges') ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
+	%footer{:id => [((controller_name =='photos' && action_name=='index' && Photo.all.size > 3 || !flash['notice'].nil?) || controller_name =='photos' && ['show'].include?(action_name) ||controller_name=='posts' || controller_name=='registrations' && !['show','edit'].include?(action_name)|| controller_name=='charges') ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
 		%div{:class => 'container'}
 			%ul{class: "footer-list"}
 				%li{class: "footer-list-item"}

@@ -4,6 +4,6 @@
 			The form contains 
 			= pluralize(object.errors.count, 'error')
 		
-		%ul
-			= list_of object.errors.full_messages.each do |msg|
-				#{msg[:message]}
+			%ul
+				= list_of object.errors.full_messages.each do |msg|
+					#{msg}
