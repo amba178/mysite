@@ -730,3 +730,13 @@ h5{
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 
 }
+
+
+/* posts css*/
+.nested_posts {
+  margin-left: 30px;
+}
+
+.nested_posts .neste_posts .nested_posts .nested_posts {
+  margin-left: 0;
+}

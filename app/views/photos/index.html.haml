@@ -30,8 +30,10 @@
 				-# 			%span Tweet 
 				-# 			=fa_icon 'twitter', class: 'fa-1x'
 				-# 		=link_to "Comment/Share on social media", photo_path(photo.id)
-			-else 
-				%em Processing...
+			-else
+				%h4{class: "text-center google-font-tangerine"} 
+					%em Processing...
+					-# %img{src: "...", alt: "...", class: "img-thumbnail"}
 - if user_signed_in?
 	= direct_upload_form_for @uploader do |f|
 		.col-xs-4.pull-right 

@@ -8,7 +8,9 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @post = Post.new()
+    @posts = @photo.posts.order("created_at")
+    session[:photo_id]=@photo.id 
+    @post = Post.new(:parent_id => params[:parent_id])
   end
 
   def new
@@ -36,7 +38,7 @@ class PhotosController < ApplicationController
 
   private 
   	def photo_params
-  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description)
+  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description, :parent_id)
   	end
 
     def set_photo
