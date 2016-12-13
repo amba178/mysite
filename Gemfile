@@ -46,7 +46,7 @@ gem "koala", "~> 2.2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'ancestry'
-gem 'responder'
+# gem 'responder'
 # gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 

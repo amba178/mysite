@@ -19,7 +19,8 @@
 				=fa_icon 'facebook', class: 'fa-1x'
 
 	.col-sm-8.col-sm-offset-2
-		= nested_posts @posts.arrange(:order => :created_at)
+		#posts
+			= nested_posts @posts.arrange(:order => :created_at)
 		=render 'shared/post_form'
 		=link_to photos_path do 
 			=fa_icon 'angle-double-left', class: 'fa-1x'

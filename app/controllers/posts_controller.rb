@@ -18,21 +18,23 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     session[:photo_id] ||= @post.photo_id  
-    # byebug
+
     if !session[:photo_id].nil? && session[:photo_id]!= @post.photo_id && !@post.photo_id.nil?
       session[:photo_id] = @photo.photo_id 
     end
-    if @post.save
-      @photo = Photo.find(session[:photo_id])
-      session[:photo_id] = nil 
-      # respond_to do |format|
-        redirect_to  @photo 
-        # format.js 
-      # end
-    else
-     @photo = Photo.find(session[:photo_id])
-     @posts = @photo.posts.order("created_at")
-     render "photos/show" 
+
+    respond_to do |format|
+      if @post.save
+        @photo = Photo.find(session[:photo_id])
+        session[:photo_id] = nil 
+        format.html {redirect_to  @photo}
+        format.js 
+        # format.json { render json: @post, status: :created, location: @photo}  
+      else
+        @photo = Photo.find(session[:photo_id])
+        @posts = @photo.posts.order("created_at")
+        format.html { render 'photos/show'}
+      end
     end
   end
 
