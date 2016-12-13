@@ -193,7 +193,7 @@ p#share-paragraph{
 
 
 /*erorr*/
-#error_explanation {
+.error_explanation {
   color: red;
   ul {
     color: red;
@@ -271,7 +271,7 @@ p#share-paragraph{
 
 
 /* temp css for disabling*/
-.btn-primary.disabled, .btn-primary[disabled], 
+/*.btn-primary.disabled, .btn-primary[disabled], 
 fieldset[disabled] .btn-primary, 
 .btn-primary.disabled:hover, 
 .btn-primary[disabled]:hover, 
@@ -289,7 +289,7 @@ fieldset[disabled] .btn-primary:focus,
  fieldset[disabled] .btn-primary.active {
     background-color: #337ab7;
     border-color: #337ab7;
-}
+}*/
 
 /*end of temp css*/
 

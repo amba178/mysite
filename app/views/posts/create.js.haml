@@ -3,5 +3,6 @@
 	$('#new_post')[0].reset();
 	alert("salem");
 - else 
+	$('.error_explanation').hide();
 	$('#new_post').before('#{j render "shared/error_messages", object: @post }')
 	
