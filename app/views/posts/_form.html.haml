@@ -1,0 +1,12 @@
+- provide(:title, "Reply")
+-# %h4{class: 'page-header reply_post_header'}Reply:
+-# Haml::Template.options[:ugly] = true
+= form_for @post, html: {class: "reply_post_class"} do |f|
+	=render 'shared/error_messages', object: f.object
+	.form-group
+		=f.label :content , "Reply:"
+		=f.hidden_field :parent_id 
+		=f.hidden_field :photo_id, :value =>  "#{!params[:id].nil? ? params[:id] : session[:photo_id]}"
+		%br
+		=f.text_area(:content,cols: 4,class: 'form-control',rows: 8, placeholder: 'Compose new comment.....')
+	=f.submit "Post", class: 'btn btn-primary btn-block'

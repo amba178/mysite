@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  respond_to :html, :haml,  :json
+
   def index
   end
 
