@@ -1,4 +1,4 @@
-= form_for @post, html: { class: "new_post_class"} do |f|
+= form_for @post, remote: true,  html: { class: "new_post_class"} do |f|
 	=render 'shared/error_messages', object: f.object
 	.form-group
 		=f.label :content , "Comment:"
