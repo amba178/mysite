@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107205712) do
+ActiveRecord::Schema.define(version: 20161126003004) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -43,10 +43,20 @@ ActiveRecord::Schema.define(version: 20161107205712) do
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "image"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.boolean  "image_processed"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.boolean  "image_processed",               default: false
     t.text     "description",     limit: 65535
+  end
+
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "ancestry"
+    t.integer  "photo_id"
+    t.index ["ancestry"], name: "index_posts_on_ancestry", using: :btree
+    t.index ["photo_id"], name: "index_posts_on_photo_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -75,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161107205712) do
     t.string   "uid"
     t.string   "image"
     t.string   "nickname"
+    t.string   "auth_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

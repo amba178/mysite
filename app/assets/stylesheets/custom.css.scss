@@ -247,6 +247,10 @@ p#share-paragraph{
   font-weight: normal;
 }
 
+#photo-show-page{
+  margin-left: 70px;
+}
+
 #photo-well{
   margin-top: 40px;
 }
@@ -480,6 +484,10 @@ fieldset[disabled] .btn-default.active {
 
 #static_footer{
   position: absolute;
+}
+
+.show-well{
+  margin-top: 25px;
 }
 
 
@@ -721,4 +729,14 @@ h5{
   transform: rotate(2deg) !important;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 
+}
+
+
+/* posts css*/
+.nested_posts {
+  margin-left: 30px;
+}
+
+.nested_posts .neste_posts .nested_posts .nested_posts {
+  margin-left: 0;
 }

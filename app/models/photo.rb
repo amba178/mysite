@@ -1,5 +1,6 @@
 class Photo < ApplicationRecord
 	mount_uploader :image, ImageUploader 
+	has_many :posts 
 
 	after_save :enqueue_image
 

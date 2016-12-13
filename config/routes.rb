@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
+
   root to: 'static_pages#index'
-  resources :photos, :charges  
+  resources :photos, :charges, :posts  
   match 'about', to: 'static_pages#about', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
 

@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 
 
-
     protected 
 
   		def update_resource(resource, params)
