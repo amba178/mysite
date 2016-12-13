@@ -1,2 +1,7 @@
-$('#posts').append('#{j render @post}');
-$('#new_post')[0].reset();
+- if !@post.errors.any?
+	$('#posts').append('#{j render @post}');
+	$('#new_post')[0].reset();
+	alert("salem");
+- else 
+	$('#new_post').before('#{j render "shared/error_messages", object: @post }')
+	
