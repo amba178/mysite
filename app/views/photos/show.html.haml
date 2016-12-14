@@ -22,8 +22,12 @@
 		#posts
 			= nested_posts @posts.arrange(:order => :created_at)
 		=render 'shared/post_form'
-		=link_to photos_path do 
-			=fa_icon 'angle-double-left', class: 'fa-1x'
-			Back to photos
+		%ul{class: "link-list"}
+			%li{class: "link-list-item"} 
+				=link_to photos_path do 
+					=fa_icon 'angle-double-left', class: 'fa-1x'
+					Back to photos
+			%li{class: "link-list-item", id: 'new-comment-id'}
+				=link_to 'New Comment',  new_post_path, remote: true, data: {turbolinks: false }
 			
 			

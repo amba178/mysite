@@ -6,7 +6,7 @@
 		
 			%ul
 				= list_of object.errors.full_messages.each do |msg|
-					- if msg.key?(:message)
+					- if msg.class==Hash
 						#{msg.fetch(:message, "Something went wrong!")}
 					- else 
 						#{msg}

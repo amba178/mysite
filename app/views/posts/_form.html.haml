@@ -1,7 +1,7 @@
 - provide(:title, "Reply")
 -# %h4{class: 'page-header reply_post_header'}Reply:
 -# Haml::Template.options[:ugly] = true
-= form_for @post, html: {class: "reply_post_class"} do |f|
+= form_for @post, remote: true, html: {class: "reply_post_class"} do |f|
 	=render 'shared/error_messages', object: f.object
 	.form-group
 		=f.label :content , "Reply:"

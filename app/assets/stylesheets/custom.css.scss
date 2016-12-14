@@ -216,6 +216,27 @@ p#share-paragraph{
    border-radius: 5px;
 }
 
+.link-list {
+  list-style: none;
+}
+
+.link-list li{
+  display: inline-block;
+}
+li.link-list-item{
+  color: #337ab7;
+  }
+
+.fa.fa-angle-double-left.fa-1x {
+  margin-left: -40px;
+}
+li#new-comment-id::before {
+  content: "|";
+  margin-left: -2px;
+
+}
+
+
 /*end error css */
 .glyphicon-user.reg-user{
   color: #fff;
