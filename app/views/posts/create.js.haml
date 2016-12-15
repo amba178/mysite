@@ -1,0 +1,14 @@
+- if !@post.errors.any?
+	$('#new_post')[0].reset();
+	$('.reply_post_class').hide();
+	$('.new_post_class').show();
+	$('.error_explanation').hide();
+	$('#new-comment-id').hide();
+	- if @post.parent_id.nil?
+		$('#posts').append('#{j render @post}');
+	-else 
+		$('#reply_#{@post.parent_id}').append("<div class='nested_posts'> #{j render @post} </div>");
+- else 
+	$('.error_explanation').hide();
+	$('#new_post').before('#{j render "shared/error_messages", object: @post }')
+	

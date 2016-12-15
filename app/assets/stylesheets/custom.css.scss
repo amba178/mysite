@@ -193,7 +193,7 @@ p#share-paragraph{
 
 
 /*erorr*/
-#error_explanation {
+.error_explanation {
   color: red;
   ul {
     color: red;
@@ -215,6 +215,27 @@ p#share-paragraph{
   border: 2px solid #f2dede;
    border-radius: 5px;
 }
+
+.link-list {
+  list-style: none;
+}
+
+.link-list li{
+  display: inline-block;
+}
+li.link-list-item{
+  color: #337ab7;
+  }
+
+.fa.fa-angle-double-left.fa-1x {
+  margin-left: -40px;
+}
+li#new-comment-id::before {
+  content: "|";
+  margin-left: -2px;
+
+}
+
 
 /*end error css */
 .glyphicon-user.reg-user{
@@ -271,7 +292,7 @@ p#share-paragraph{
 
 
 /* temp css for disabling*/
-.btn-primary.disabled, .btn-primary[disabled], 
+/*.btn-primary.disabled, .btn-primary[disabled], 
 fieldset[disabled] .btn-primary, 
 .btn-primary.disabled:hover, 
 .btn-primary[disabled]:hover, 
@@ -289,7 +310,7 @@ fieldset[disabled] .btn-primary:focus,
  fieldset[disabled] .btn-primary.active {
     background-color: #337ab7;
     border-color: #337ab7;
-}
+}*/
 
 /*end of temp css*/
 
@@ -548,6 +569,9 @@ h5{
   .control-label {
     font-size: 15px;
   }
+  p.text-center{
+    font-size: 15px;
+  }
   .form-group > label {
     font-size: 15px;
   }
@@ -568,6 +592,9 @@ h5{
   .control-label {
     font-size: 16px;
   }
+  p.text-center{
+    font-size: 16px;
+  }
 
   .form-group > label {
     font-size: 16px;
@@ -585,7 +612,9 @@ h5{
   html{
     font-size: 17px;
   }
-
+  p.text-center{
+    font-size: 17px;
+  }
   .control-label {
     font-size: 17px;
   }
@@ -605,6 +634,10 @@ h5{
     font-size: 18px;
   }
   .control-label {
+    font-size: 18px;
+  }
+
+  p.text-center{
     font-size: 18px;
   }
 
@@ -635,6 +668,10 @@ h5{
   .btn.btn-primary{
     font-size: 19px;
   }
+
+  p.text-center{
+    font-size: 19px;
+  }
   .google-font-cursive{
     font-size: 19px;
   }
@@ -648,6 +685,10 @@ h5{
   }
   .control-label {
     font-size: 60px;
+  }
+
+  p.text-center{
+    font-size: 20px;
   }
 
   .form-group > label {
@@ -680,6 +721,10 @@ h5{
   .google-font-cursive{
     font-size: 23px;
   }
+
+  p.text-center{
+    font-size: 21px;
+  }
   img#face-pic {
     margin-top: -80px !important;
   }
@@ -706,6 +751,10 @@ h5{
   }
   img#face-pic {
     margin-top: -100px !important;
+  }
+
+  p.text-center{
+    font-size: 23px;
   }
 
   p, li {

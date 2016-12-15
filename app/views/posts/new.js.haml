@@ -1,5 +1,14 @@
-$('.reply_post_class, .reply_post_header').hide();
-$('.new_post_class').hide().after('#{j render "form" }') 
 
-	
-	 
+- if @post.parent_id 
+	$('.reply_post_class, .reply_post_header, .error_explanation').hide();
+	$('.new_post_class').hide().after('#{j render "form" }') 
+	$('#new-comment-id').show();
+	$('ul.link-list li').addClass("link-list-item");
+-else 
+	$('.reply_post_class, .reply_post_header, .error_explanation').hide();
+	$('.reply_post_class').hide();
+	$(".new_post_class").show();
+	$('#new-comment-id').hide();
+	// $('ul.link-list li').removeClass('link-list-item')
+
+

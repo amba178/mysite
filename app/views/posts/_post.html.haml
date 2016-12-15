@@ -3,8 +3,9 @@
 		= post.created_at.strftime("%B %d, %Y") 
 	.content
 		= link_to post.content, post
-  
-	%div{class: "actions", id: "reply_#{post.id}"}
-		= link_to "Reply", new_post_path(:parent_id => post), remote: true,  id: "reply_new_link"
-		|
-		= link_to "Destroy", post, :confirm => "Are you sure?", :method => :delete  
+	-if request.xhr? || controller.controller_name =="photos"
+
+		%div{class: "actions", id: "reply_#{post.id}"}
+			= link_to "Reply", new_photo_post_path(:parent_id => post, :photo_id => post.photo_id), remote: true, id: "reply_new_link"
+			|
+			= link_to "Destroy", post, :confirm => "Are you sure?", :method => :delete  

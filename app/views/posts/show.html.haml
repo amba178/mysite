@@ -1,2 +1,11 @@
-%h1 Posts#show
-%p Find me in app/views/posts/show.html.haml
+- provide(:title, "Post")
+
+.row.well.well-lg.show-well
+	.page-header
+		%h3.text-center Single Discussion
+	.col-sm-8.col-sm-offset-2
+		#posts
+			= nested_posts @post.subtree.arrange(:order => :created_at)
+		=link_to photo_path(@post.photo_id) do 
+			=fa_icon 'angle-double-left', class: 'fa-1x'
+			Back to previous page
