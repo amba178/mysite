@@ -4,6 +4,7 @@
 	$('.new_post_class').show();
 	$('.error_explanation').hide();
 	$('#new-comment-id').hide();
+	$('#no-discussion').hide()
 	- if @post.parent_id.nil?
 		$('#posts').append('#{j render @post}');
 	-else 

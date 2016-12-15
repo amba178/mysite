@@ -20,7 +20,11 @@
 
 	.col-sm-8.col-sm-offset-2
 		#posts
-			= nested_posts @posts.arrange(:order => :created_at)
+			- if !@posts.empty?
+				= nested_posts @posts.arrange(:order => :created_at)
+			-else
+				.page-header 
+					%h4.text-center#no-discussion You are the first person to start the discussion!
 		=render 'shared/post_form'
 		%ul{class: "link-list"}
 			%li{class: "link-list-item"} 
