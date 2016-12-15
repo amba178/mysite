@@ -1,14 +1,14 @@
 -provide(:title, @photo.name)
 
 .row.well.well-lg.show-well
-	.col-sm-6.col-lg-4.col-md-4.col-xs-12.col-sm-offset-4.img-responsive
+	.col-sm-4.col-lg-4.col-md-4.col-xs-12.col-sm-offset-2.img-responsive
 		%h4{class: "text-center google-font-tangerine"}
 			=@photo.name
-		=image_tag @photo.image_url(:thumb).to_s, class: 'img-thumbnail center-block'
+		=image_tag @photo.image_url(:thumb).to_s, class: 'img-thumbnail'
 		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
 		- meta og: { url: "localhost:3000/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
 
-		%p{id: 'share-paragraph'}
+		%p{id: 'share-paragraph ', class: "text-center"}
 			
 			=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos", class: 'btn btn-primary btn-xs btn-share' do 
 				%span Tweet

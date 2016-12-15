@@ -1,5 +1,7 @@
 
+ready = function(){
 
+}
 $(document).on("turbolinks:load", function() {
 
 	if ($('#new_post').length) {
@@ -8,5 +10,9 @@ $(document).on("turbolinks:load", function() {
 		$('li').removeClass("link-list-item")
        
 	}
+});
+
+$(document).on('click', '.content', function(){
+	// alert($(this).parent().attr("class"));
 });
 
