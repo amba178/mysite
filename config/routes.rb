@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   
 
   root to: 'static_pages#index'
-  resources :photos, :charges, :posts  
+  resources :photos, :charges, :posts
+  resources :photos do 
+    resources :posts 
+  end
   match 'about', to: 'static_pages#about', via: 'get'
   match 'contact', to: 'static_pages#contact', via: 'get'
 

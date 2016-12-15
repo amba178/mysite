@@ -8,7 +8,5 @@ $(document).on("turbolinks:load", function() {
 		$('li').removeClass("link-list-item")
        
 	}
-
-	alert("salem");
 });
 

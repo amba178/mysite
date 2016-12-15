@@ -1,7 +1,11 @@
 - if !@post.errors.any?
-	$('#posts').append('#{j render @post}');
 	$('#new_post')[0].reset();
-	alert("salem");
+	$('.reply_post_class').hide();
+	$('.new_post_class').show();
+	$('.error_explanation').hide();
+	$('#new-comment-id').hide();
+	- if @post.parent_id.nil?
+		$('#posts').append('#{j render @post}');
 - else 
 	$('.error_explanation').hide();
 	$('#new_post').before('#{j render "shared/error_messages", object: @post }')

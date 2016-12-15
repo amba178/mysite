@@ -28,6 +28,6 @@
 					=fa_icon 'angle-double-left', class: 'fa-1x'
 					Back to photos
 			%li{class: "link-list-item", id: 'new-comment-id'}
-				=link_to 'New Comment',  new_post_path, remote: true, data: {turbolinks: false }
+				=link_to 'New Comment',  new_photo_post_path(:photo_id =>@photo.id), remote: true, data: {turbolinks: false }
 			
 			
