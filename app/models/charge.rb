@@ -1,6 +1,6 @@
 class Charge < ApplicationRecord
     has_many :transactions, class_name: 'ChargeTransaction'
-	belongs_to :user, :optional => true 
+	belongs_to :user     #, :optional => true 
 	validate :validate_card, on: :create 
 	attr_accessor :card_number, :card_verification_value
 

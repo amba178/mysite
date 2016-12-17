@@ -13,6 +13,7 @@ class ChargesController < ApplicationController
         ChargeMailer.charge_confirmation(current_user, ChargeTransaction.last.params).deliver 
         render  'success'
       else
+        
         render  'failure'
       end
     else

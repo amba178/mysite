@@ -417,6 +417,7 @@ img#nav-iamge{
   background-color: #32CD32;
   border-color: #32CD32;
   color: #fff;
+  margin-top: 10px;
 }
 
 
@@ -471,7 +472,7 @@ fieldset[disabled] .btn-default.active {
   margin-top: 20px;
 }
 .form-control.cvv{
-  width: 30%;
+  width: 40%;
   display: inline;
 }
 .img-responsive{
@@ -491,11 +492,11 @@ fieldset[disabled] .btn-default.active {
 }
 
 #charge_card_type{
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .progress-status{
-  margin-top: 30%;
+  margin-top: 100px;
 }
 
 
@@ -535,6 +536,19 @@ h5{
   html{
     font-size: 5px;
   }
+
+
+
+  .form-control.cvv {
+    width: 20%;
+  }
+  .page-header {
+    margin-right: 0px !important;
+  }
+
+ /* .fa-3x {
+     font-size: 1em !important;
+  }*/
   .control-label {
     font-size: 9px;
   }
@@ -566,8 +580,16 @@ h5{
   html{
     font-size: 15px;
   }
+
+  .page-header {
+    margin-right: 0px !important;
+  }
+
+  .form-control.cvv {
+    width:40%;
+  }
   .control-label {
-    font-size: 15px;
+    font-size: 12px;
   }
   p.text-center{
     font-size: 15px;
@@ -589,8 +611,20 @@ h5{
   html{
     font-size: 16px;
   }
+
+  /*/*.fa-3x {
+    font-size: 3em !important;
+  }*/
   .control-label {
-    font-size: 16px;
+    font-size: 12px;
+  }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
+  .page-header {
+    margin-right: 0px !important;
   }
   p.text-center{
     font-size: 16px;
@@ -612,11 +646,22 @@ h5{
   html{
     font-size: 17px;
   }
+  
+  /*.fa-3x {
+    font-size: 3em !important;
+  }*/
+  .form-control.cvv {
+    width:40%;
+  }
+  .page-header {
+    margin-right: 0px !important;
+  }
+
   p.text-center{
     font-size: 17px;
   }
   .control-label {
-    font-size: 17px;
+    font-size: 12px;
   }
 
   .form-group > label {
@@ -633,8 +678,20 @@ h5{
   html{
     font-size: 18px;
   }
+
+  .page-header {
+    margin-right: 0px !important;
+  }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
+  /*.fa-3x {
+    font-size: 3em !important;
+  }*/
   .control-label {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   p.text-center{
@@ -658,8 +715,20 @@ h5{
   html{
     font-size: 19px;
   }
+
+  .page-header {
+    margin-right: 120px !important;
+  }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
+  /*.fa-3x {
+    font-size: 3em !important;
+  }*/
   .control-label {
-    font-size: 19px;
+    font-size: 12px;
   }
 
   .form-group > label {
@@ -683,6 +752,19 @@ h5{
   html{
     font-size: 20px;
   }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
+  .page-header {
+    margin-right: 120px !important;
+  }
+
+  /*.fa-3x {
+    font-size: 3em !important;
+  }*/
+ 
   .control-label {
     font-size: 60px;
   }
@@ -709,8 +791,19 @@ h5{
     font-size: 21px;
   }
   .control-label {
-    font-size: 21px;
+    font-size: 12px;
   }
+  .page-header {
+    margin-right: 120px !important;
+  }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
+  /*.fa-3x {
+    font-size: 1em !important;
+  }*/
 
   .form-group > label {
     font-size: 21px;
@@ -734,11 +827,16 @@ h5{
     font-size: 22px;
   }
   .control-label {
-    font-size: 14px;
+    font-size: 12px;
   }
-  .control-label {
-    font-size: 16px;
+  .page-header {
+    margin-right: 120px !important;
   }
+
+  .form-control.cvv {
+    width:40%;
+  }
+
 
   .form-group > label {
     font-size: 16px;
