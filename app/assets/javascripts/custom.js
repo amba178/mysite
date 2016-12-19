@@ -15,4 +15,3 @@ $(document).on("turbolinks:load", function() {
 $(document).on('click', '.content', function(){
 	// alert($(this).parent().attr("class"));
 });
-
