@@ -1,7 +1,8 @@
 class PhotosController < ApplicationController
-  before_filter :authenticate 
+  before_action :authenticate 
   before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_photo, :only => [:show]
+
   def index
     @photos = Photo.all 
     @uploader = Photo.new.image 
@@ -50,7 +51,8 @@ class PhotosController < ApplicationController
 
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
-      username == ENV['PHOTOS_USERNAME'] && password == ENV['PHOTOS_PASSWORD']
+        username == ENV['PHOTOS_USERNAME'] && password == ENV['PHOTOS_PASSWORD']
+      end
     end
 
 
