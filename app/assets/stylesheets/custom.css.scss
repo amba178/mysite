@@ -537,6 +537,15 @@ h5{
     font-size: 5px;
   }
 
+  .navbar-brand, #salem-name {
+  font-size: 1.5rem;
+}
+
+
+  p, li {
+  font-size: 2rem !important;
+}
+
 
 
   .form-control.cvv {
@@ -581,6 +590,10 @@ h5{
     font-size: 15px;
   }
 
+  p, li {
+  font-size: 2rem !important;
+}
+
   .page-header {
     margin-right: 0px !important;
   }
@@ -611,6 +624,12 @@ h5{
   html{
     font-size: 16px;
   }
+
+
+  p, li {
+  font-size: 2rem !important;
+}
+
 
   /*/*.fa-3x {
     font-size: 3em !important;
@@ -826,6 +845,14 @@ h5{
   html{
     font-size: 22px;
   }
+  p, li {
+  font-size: .7rem !important;
+}
+
+.navbar-brand, #salem-name {
+  font-size: 1rem;
+}
+
   .control-label {
     font-size: 12px;
   }
