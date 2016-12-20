@@ -16,11 +16,11 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require File.expand_path("../../config/environment", __FILE__)
 require 'rubygems'
 require 'factory_girl'
-require 'email-spec'
-require 'webmock/rspec'
-
+require 'email_spec'
+require 'database_cleaner'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -101,6 +101,7 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
   config.include FactoryGirl::Syntax::Methods
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -110,5 +111,4 @@ RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
 
-  config.pattern = "**/*_spec.rb"
 end

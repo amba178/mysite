@@ -58,7 +58,7 @@ group :development, :test do
   gem 'byebug'
   gem "letter_opener" 
   gem 'mysql2', '>= 0.3.13', '< 0.5'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'spring'
   gem 'guard'
