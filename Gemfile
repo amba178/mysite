@@ -6,7 +6,6 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-# gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
@@ -20,10 +19,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'rmagick'
 gem 'jquery-turbolinks'
-# gem 'active_record-acts_as'
-# gem "fog-aws"
 gem 'localtunnel'
-
 gem "fog"
 gem "carrierwave"
 gem 'carrierwave_direct'
@@ -47,8 +43,10 @@ gem "koala", "~> 2.2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'ancestry'
+gem 'ffaker'
+gem 'faker'
+gem 'bootstrap-will_paginate'
 # gem 'responder'
-# gem 'activemerchant'
 # gem 'capistrano-rails', group: :development
 
 group :production do 
@@ -60,10 +58,30 @@ group :development, :test do
   gem 'byebug'
   gem "letter_opener" 
   gem 'mysql2', '>= 0.3.13', '< 0.5'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'spring'
+  gem 'guard'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
+
+end
+
+group :test do
+	gem 'cucumber-rails', :require => false
+	gem 'database_cleaner'
+	gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers', require: false
+	gem 'email_spec'
+	gem 'poltergeist'
+	gem 'launchy'
+	gem "capybara"
+	gem 'selenium-webdriver'
+	gem 'webmock' 
 end
 
 group :development do
   gem 'web-console'
+  gem 'bullet'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
