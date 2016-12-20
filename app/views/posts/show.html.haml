@@ -6,6 +6,8 @@
 	.col-sm-8.col-sm-offset-2
 		#posts
 			= nested_posts @post.subtree.arrange(:order => :created_at)
+	.col-sm-8.col-sm-offset-1.col-xs-offset-1
+		%hr 
 		=link_to photo_path(@post.photo_id) do 
 			=fa_icon 'angle-double-left', class: 'fa-1x'
-			Back to previous page
+			%span{class: 'message'} Back to previous page
