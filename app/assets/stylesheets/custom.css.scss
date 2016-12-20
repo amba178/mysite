@@ -175,6 +175,10 @@ p#share-paragraph{
   margin-right: 10px;
 }
 
+.img-thumbnail{
+  margin-bottom: 10px;
+}
+
 
 
 .btn-share:hover,
@@ -218,6 +222,8 @@ p#share-paragraph{
 
 .link-list {
   list-style: none;
+
+
 }
 
 .link-list li{
@@ -270,6 +276,7 @@ li#new-comment-id::before {
 
 #photo-show-page{
   margin-left: 70px;
+
 }
 
 #photo-well{
@@ -537,16 +544,18 @@ h5{
     font-size: 5px;
   }
 
+  #photo-show-page{
+    font-size: 10px;
+    margin-left: 50px;
+  }
+
+  .message{
+    font-size: 10px;
+  }
+
   .navbar-brand, #salem-name {
-  font-size: 1.5rem;
-}
-
-
-  p, li {
-  font-size: 2rem !important;
-}
-
-
+    font-size: 1.5rem;
+  }
 
   .form-control.cvv {
     width: 20%;
@@ -565,7 +574,7 @@ h5{
     font-size: 9px;
   }
   .btn.btn-primary{
-    font-size: 9px;
+    font-size: 16px;
   }
 
   .google-font-cursive{
@@ -574,10 +583,8 @@ h5{
   img#face-pic {
     margin-top: -50px !important;
   }
-
-
   p, li {
-  font-size: 1rem;
+   font-size: 1rem;
   }
   input[type='file']{
     font-size: 7px;
@@ -666,6 +673,9 @@ h5{
     font-size: 17px;
   }
   
+ /* p, li {
+  font-size: 2rem !important;
+ }*/
   /*.fa-3x {
     font-size: 3em !important;
   }*/
@@ -706,6 +716,10 @@ h5{
     width:40%;
   }
 
+  p, li {
+  font-size: .8rem !important;
+}
+
   /*.fa-3x {
     font-size: 3em !important;
   }*/
@@ -738,6 +752,10 @@ h5{
   .page-header {
     margin-right: 120px !important;
   }
+
+  p, li {
+  font-size: .7rem !important;
+}
 
   .form-control.cvv {
     width:40%;
@@ -845,6 +863,14 @@ h5{
   html{
     font-size: 22px;
   }
+   #photo-show-page{
+    font-size: 14px;
+    margin-left: 70px;
+  }
+
+  .message{
+    font-size: 14px !important;
+  }
   p, li {
   font-size: .7rem !important;
 }
@@ -908,7 +934,7 @@ h5{
 
 /* posts css*/
 .nested_posts {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .nested_posts .neste_posts .nested_posts .nested_posts {

@@ -2,7 +2,11 @@
 	.created_at
 		= post.created_at.strftime("%B %d, %Y") 
 	.content
-		= link_to post.content, post
+		-if controller_name=='photos'
+			= link_to truncate(post.content, length: 250, omission: '   ...(continue reading)'), post
+		-else 
+			= link_to post.content, post 
+		-# =truncate(post.content, length: 250, omission: '   ...(continue reading)')
 	-if request.xhr? || controller.controller_name =="photos"
 
 		%div{class: "actions", id: "reply_#{post.id}"}
