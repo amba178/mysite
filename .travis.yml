@@ -4,13 +4,14 @@ rvm:
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - mysql -e 'CREATE DATABASE mysite_test'
+  - mysql -e 'CREATE DATABASE mysite_test' -u root -p salimali178 
 
 script:
   - bundle exec  rails db:migrate
   - bundle exec  rails db:schema:load
   - bundle exec  rails db:test:prepare
   - bundle exec  rails spec
+  # - bundle exec  rails cucumber 
 
 services:
   - redis-server 
