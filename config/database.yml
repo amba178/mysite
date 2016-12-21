@@ -28,7 +28,6 @@ test: &test
   adapter: mysql2
   encoding: utf8
   username: root
-  password: salimali178
   database: mysite_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -55,6 +54,3 @@ production:
   database: mysite_production
   username: mysite
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
-
-cucumber:
-  <<: *test

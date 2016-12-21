@@ -4,8 +4,7 @@ rvm:
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
- before_script: 
-  - cp config/database.yml.travis config/database.yml
+  - mysql -e 'CREATE DATABASE mysite_test' 
 
 script:
   - bundle exec rails db:create:all 
