@@ -13,7 +13,7 @@ script:
   - bundle exec  rails db:schema:load
   - bundle exec  rails db:test:prepare
   - bundle exec  rails spec
-  # - bundle exec  rails cucumber 
+  - bundle exec  rails cucumber 
 
 services:
   - redis-server 
