@@ -7,8 +7,6 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'byebug'
 require 'support/factory_girl'
-
-
 require 'shoulda/matchers'
 require 'capybara/poltergeist'
 require 'devise'

@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
-# gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass',          '3.2.0.0'
 # gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "haml-rails", "~> 0.9"
@@ -58,7 +57,7 @@ group :development, :test do
   gem 'byebug'
   gem "letter_opener" 
   gem 'mysql2', '>= 0.3.13', '< 0.5'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'spring'
   gem 'guard-rspec', require: false
@@ -80,8 +79,6 @@ group :test do
 	gem 'selenium-webdriver'
 	gem 'webrat'
 	gem 'selenium-client'
-	# gem 'webmock' 
-
 end
 
 group :development do

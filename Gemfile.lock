@@ -650,7 +650,7 @@ DEPENDENCIES
   redis (~> 3.0)
   rmagick
   roadie (~> 3.1.1)
-  rspec-rails (~> 3.0)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-client
   selenium-webdriver
