@@ -8,7 +8,7 @@
 		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
 		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
 		- meta fa: {app_id: "#{ENV['FACEBOOK_API_ID']}" } 
-		- meta og: { image: [{width: 450},height: 298}] 
+		- meta og: { image: [{width: 450, height: 298}]}
 
 		%p{id: 'share-paragraph ', class: "text-center"}
 			
