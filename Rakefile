@@ -3,7 +3,6 @@
 
 require_relative 'config/application'
 require 'rake'
-require 'rspec/core/rake_task'
 
 Rails.application.load_tasks
 
@@ -15,3 +14,11 @@ namespace :spec do
 		t.rcov_opts = ['--execlude', '\/Library\/Ruby']
 	end
 end
+
+
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+  rescue LoadError
+end
+
