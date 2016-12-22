@@ -6,7 +6,8 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 - mysql -e 'CREATE DATABASE mysite_test'
 script:
-- bundle exec  rails db:create:all
+
+- bundle exec rails db:create:all
 - bundle exec  rails db:migrate
 - bundle exec  rails db:schema:load
 - bundle exec  rails db:test:prepare
@@ -25,10 +26,10 @@ env:
   - secure: ONS09IVCr0DSAMvfEBq7RZErnT/Lu9Nn3BWoQerdcqVA9EpSAi1zkIG6tcD4d9XYkZ5l4lbyNo5XN2YoPuaIlB1hu1YCTEiAVmbwKd52eIsKBN2lTLPb0XJ6BtNaiPHJqlVhRdFTC2RISQ/49pzkVU4OXIFYviOcjqcrpM6L9Xo3sMnO3tTlScaTefp8bl/sM6g0lbextcX+74XhbrumAzdLa/Z6JbaT8CIxQSUVDLqKNxd3RK5p3jqFiFEr6JfvzBOyrV2YhWDdY+QlvmJdHbb4ZoE+/m/NfVSxv97QG/DvSNUCswD8Y/rCMxdBktMGLvy2bF1VKmZM9xEgfjdzmCTnuKiFRcnYw37m52XrqcC6gNlFQuIlVEEko3mUT9jgVLRzRNTULswMGeAYidhDFzFk0s4MDKOYxrI1Y/vKfhVawMMQ1i9GaWpZuSWo/66aKbDQgRpiBgtjFgc1hjlfqwaFBtsQJR48P+TfaazBUIBjoUs7AVNeCd4/876n0hw1OS7mBt/5YUMBMEQ3iaSZKl7xDKe4XLKNG8txjiTBKYol1iW6/hDaTrr/4gIAk2mYeRqD35bj3TP3L8V6XduqecRJaIx0qPvVMjRwG+ytz/Z4GkED9gMcN7Mt+VJmul03tF+cfr6WMhz7r+7jH4KpTj9QbFm0KlB3KegI1h+Hv/E=
   - secure: WwrFZO5GeeYoUqaerOermp6BbBzTXQJHP7sk2uTV+stL0oHk4HsWWQtxd8BF/0uLu/aIhpXMQISXP3vv2ZS3H5++TXy5piVu6TDuRXc9+MRAxn1NNAZ9X7No3jjNoEr68WtiRhwQj8RZasKSFYbn5r9ojrxhdSPY7twF5jFWRIjGG5jWDD79kr75EMjmTs0ix3evJLVjNTitph1TDxLlCxJzHo9EtDvosiLzOT0MI1KCHk3Igh5F8tdd1JhSJzVJX9Ssbc7+JKiGHtH7B/yDIu4tbriliq8/SptdU9irFfZKNLPR5QloVj21dNUcnwSA3udq7dJLRfEXtU/Zh4g+ymV+Ge42LdL9KdFQtJa+YmMVEqpO5hot2L8iYxh/tlkhzAvjYlDa5FAOZOtLsX9l2awr7/qg/hkIO6aGWRqxgsiMhn+EypxgufUwDSJzffgGHSVVVruk5SSzDY9bPvS2cgCME+q4BY4o9S7PtUPTzJxT7Tiw8XzjlXAZEmuO7/txh0Hpit2tJ02kA/VlCmudxqLcG7/6YccrMzVp+4Pui70BuXM/uS4XWdqDArlKVUGF7XvZA0BunEMwfq/XueBkapwhoOVReexWZzMMdRcyakZGEk0VsvwbFkoKEqwyUq4+2TVxFlVC4pv8U77TX27hMoWXRfWpVqGoeGHlD3xabD8=
 deploy:
-  - provider: heroku 
+  provider: heroku 
   api_key:
     - secure: Bc8qVTJ0JaP6BeMG4Nf2nlAnxiqXdVdkXV37RCJmJugA8d04nAB2t7KBEwNNYC0R1uZn7gheZXhHMVJyfkX3OQ5J6DKgFigCPw+cFBFiWp26Jo/dEZbcAB7OO/KtcLI8P4vF0vkW7pUekB0zIefcxM/xO8fYC37ViOLg/bD19spOza7eVTwD7l5T/4ehn0QaZZZssnm8GF549tfZHcS8dBiKPoXITDm3ofYF1ubo0GJh6T6HSdFUe0yuEKVVC3AYXW48yXJb4SoADQcsVkZjRIHjZJxqplHUVOPC3BlLY9dL8INbqJZT8t13iMpEBQZmenBPmEJJYTW8f+uBSx5bAZgggpp7JS1I4Xx0jLizZA84KnzMAuwRCfznpWkj98VPv4ZGOgQPWWKh1G5DKXwcVYfNhn8J3djvstlwdhU0AN7aSi6Xs9SH/OZ7zcDGSSYenEGvvlEj9yubtUaxZZy/eUePkO4/42EFw4N5ZuD5Gu2JAGKdWUCAKC/cqylmWpN2NmPui3kyjHxiM/lup9qEbROXZJDIVB5VsjeJ5gBsvxLugHr20r2UYSpmcP62szlUlqnvCZp/K40Ro1oBm5Yf9l6U42oO9NABlaY+ah1ut1QRgtRFymPl1N7EJDc/y2ElZ9Isq98Fp8dcfqGk1FUwXctqhYQKpOBzEGYWB0LMdEo=
   urn: 
-    - "rake db:create"
-    - "rake db:migrate"
-    - "rake cleanup"
+    - rake db:create
+    - rake db:migrate
+    - rake cleanup
