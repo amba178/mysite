@@ -6,7 +6,11 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 - mysql -e 'CREATE DATABASE mysite_test'
 script:
+<<<<<<< HEAD
 - bundle exec  rails db:create:all
+=======
+- bundle exec rails db:create:all
+>>>>>>> 2e0c35432b2f91d19dbb5c294deb293cdfa72201
 - bundle exec  rails db:migrate
 - bundle exec  rails db:schema:load
 - bundle exec  rails db:test:prepare
