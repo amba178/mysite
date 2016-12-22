@@ -18,7 +18,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require File.expand_path("../../config/environment", __FILE__)
 require 'rubygems'
-require 'factory_girl'
 require 'email_spec'
 require 'database_cleaner'
 RSpec.configure do |config|

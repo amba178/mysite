@@ -61,7 +61,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'spring'
-  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-cucumber'
   gem 'jasmine'
   gem 'jasmine-jquery-rails'
 
@@ -73,10 +74,14 @@ group :test do
 	gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers', require: false
 	gem 'email_spec'
 	gem 'poltergeist'
+	gem 'cucumber-rails-training-wheels'
 	gem 'launchy'
 	gem "capybara"
 	gem 'selenium-webdriver'
-	gem 'webmock' 
+	gem 'webrat'
+	gem 'selenium-client'
+	# gem 'webmock' 
+
 end
 
 group :development do
