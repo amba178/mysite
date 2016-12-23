@@ -53,14 +53,13 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
 
-  def filename
-     "#{secure_token()}.#{file.extension}" if original_filename.present?
-  end
+  # def filename 
+  #  if original_filename 
+  #    @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+  #    "#{@name}.#{file.extension}"
+  #  end
 
-  protected
-  def secure_token(length=16)
-    SecureRandom.hex(length)
-  end
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
