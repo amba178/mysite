@@ -3,7 +3,7 @@
 		%h3{class: 'text-center'} Post New Photo 
 		%hr
 		=form_for @photo, :html => {:multipart => true} do |f|
-			%p File: #{@photo.photo_name}
+			-# %p File: #{@photo.photo_name}
 			.form-group
 				=f.label :name 
 				=f.text_field :name, class: 'form-control'
