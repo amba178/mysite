@@ -29,7 +29,7 @@ deploy:
   provider: heroku 
   api_key:
     - secure: Bc8qVTJ0JaP6BeMG4Nf2nlAnxiqXdVdkXV37RCJmJugA8d04nAB2t7KBEwNNYC0R1uZn7gheZXhHMVJyfkX3OQ5J6DKgFigCPw+cFBFiWp26Jo/dEZbcAB7OO/KtcLI8P4vF0vkW7pUekB0zIefcxM/xO8fYC37ViOLg/bD19spOza7eVTwD7l5T/4ehn0QaZZZssnm8GF549tfZHcS8dBiKPoXITDm3ofYF1ubo0GJh6T6HSdFUe0yuEKVVC3AYXW48yXJb4SoADQcsVkZjRIHjZJxqplHUVOPC3BlLY9dL8INbqJZT8t13iMpEBQZmenBPmEJJYTW8f+uBSx5bAZgggpp7JS1I4Xx0jLizZA84KnzMAuwRCfznpWkj98VPv4ZGOgQPWWKh1G5DKXwcVYfNhn8J3djvstlwdhU0AN7aSi6Xs9SH/OZ7zcDGSSYenEGvvlEj9yubtUaxZZy/eUePkO4/42EFw4N5ZuD5Gu2JAGKdWUCAKC/cqylmWpN2NmPui3kyjHxiM/lup9qEbROXZJDIVB5VsjeJ5gBsvxLugHr20r2UYSpmcP62szlUlqnvCZp/K40Ro1oBm5Yf9l6U42oO9NABlaY+ah1ut1QRgtRFymPl1N7EJDc/y2ElZ9Isq98Fp8dcfqGk1FUwXctqhYQKpOBzEGYWB0LMdEo=
-  urn: 
+  run: 
     - rake db:create
     - rake db:migrate
     - rake cleanup
