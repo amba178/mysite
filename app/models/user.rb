@@ -18,7 +18,7 @@ class User < ApplicationRecord
    end
 
   def self.from_omniauth(auth)
-  	where(:provider => auth.provider, :uid => auth.uid).first_or_new do |user|
+  	where(:provider => auth.provider, :uid => auth.uid).first_or_initialize do |user|
     	user.email =    auth.info.email.nil? ?  "#{SecureRandom.base64(10)[0..13]}.gmail.com" : auth.info.email 
     	user.uid = auth.uid
     	user.provider = auth.provider
