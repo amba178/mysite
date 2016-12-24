@@ -11,7 +11,6 @@ class User < ApplicationRecord
    validates_presence_of :first_name, :last_name
    validates_presence_of :email, if: :email_required? 
    validates_uniqueness_of :email, allow_blank: true, if: :provider_exits
-   # after_create :skip_confirmation_auth 
     validates_presence_of :password, :on => :create 
     validates_presence_of :password_confirmation, :on => :create  
 
@@ -29,7 +28,9 @@ class User < ApplicationRecord
     	user.nickname = auth.provider == 'twitter' ?  auth.info.nickname : auth.info.name
     	user.first_name = auth.info.name.split.first
     	user.last_name = auth.info.name.split.last
-    	user.password = Devise.friendly_token[0,20]
+      token = Devise.friendly_token[0,20]
+    	user.password = token
+      user.password_confirmation = token 
       user.skip_confirmation_auth
     	# user.first_name = auth.info.name   # assuming the user model has a name
     	user.image = auth.info.image # assuming the user model has an image
