@@ -8,11 +8,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :timeoutable,
          :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
-   validates_presence_of :first_name, :last_name
-   validates_presence_of :email, if: :email_required? 
-   validates_uniqueness_of :email, allow_blank: true, if: :provider_exits
-    validates_presence_of :password, :on => :create 
-    validates_presence_of :password_confirmation, :on => :create  
+  validates_presence_of :first_name, :last_name
+  validates_presence_of :email 
+  validates_uniqueness_of :email 
+  validates_presence_of :password, :on => :create 
+  validates_presence_of :password_confirmation, :on => :create  
 
    def total_donation
      charges.pluck(:amount).reduce(:+) 
@@ -21,7 +21,7 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
   	where(:provider => auth.provider, :uid => auth.uid).first_or_initialize do |user|
     	
-      user.email =    auth.info.email 
+      user.email =  auth.info.email.nil?  ? random_email : auth.info.email 
     	user.uid = auth.uid
     	user.provider = auth.provider
       user.auth_token = auth.credentials.token
@@ -91,6 +91,10 @@ end
   end
  end
 
+ def self.random_email
+  "#{[*'a'..'z', *'A'..'Z'].shuffle[0..10].join}@gmail.com"
+ end
+
 
 
  # def update_without_password(params, *options)
@@ -104,14 +108,10 @@ end
  # end
 
 
- private 
+ protected 
 
   def email_required?
-    true  
-  end
-
-  def provider_exits
-    self.provider
+    true unless self.provider
   end
 
 

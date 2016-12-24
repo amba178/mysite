@@ -255,7 +255,7 @@ Devise.setup do |config|
   # config.omniauth :facebook, "APP_ID", "APP_SECRET", scope: 'email', info_fields: 'email,name'
 
   config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'https://develop-sagan.herokuapp.com/'
-  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'https://develop-sagan.herokuapp.com/auth/facebook/callback', scope: 'email,publish_actions'
+  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'https://develop-sagan.herokuapp.com/auth/facebook/callback', scope: 'email, publish_actions'
 
 
   # ==> Warden configuration/auth/facebook/callback
