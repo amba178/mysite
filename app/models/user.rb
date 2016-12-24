@@ -27,7 +27,7 @@ class User < ApplicationRecord
     	user.first_name = auth.info.name.split.first
     	user.last_name = auth.info.name.split.last
     	user.password = Devise.friendly_token[0,20]
-      user.skip_confirmation_notification
+      user.skip_confirmation_auth
     	# user.first_name = auth.info.name   # assuming the user model has a name
     	user.image = auth.info.image # assuming the user model has an image
       user.save
