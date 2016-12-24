@@ -34,7 +34,7 @@ class User < ApplicationRecord
       user.skip_confirmation_auth
     	# user.first_name = auth.info.name   # assuming the user model has a name
     	user.image = auth.info.image # assuming the user model has an image
-      user.save
+      user.save!
 
  	 end
   end
