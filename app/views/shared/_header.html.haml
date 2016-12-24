@@ -17,10 +17,10 @@
 				-else
 					%li{class: 'glyphicon glyphicon-user nav-glyphicon', id: 'nav-image'}
 				%li= link_to "Edit Profile", edit_user_registration_path
-				%li= link_to "Log out", destroy_user_session_path, method: :delete 
+				%li{id: "sign-out"}= link_to "Log out", destroy_user_session_path, method: :delete
 			-else 
 				%li= link_to "Sign up", new_user_registration_path
 				%li= link_to "Log in ", new_user_session_path
 				%li= link_to "Login with twitter", user_twitter_omniauth_authorize_path 
-				%li= link_to "Login with facebook", user_facebook_omniauth_authorize_path
+				%li{id: "sign-in"}= link_to "Login with facebook",   user_facebook_omniauth_authorize_path
 
