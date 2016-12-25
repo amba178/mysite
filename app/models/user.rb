@@ -8,10 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :timeoutable,
          :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
-         
+
   validates_presence_of :first_name, :last_name
-  validates_presence_of :email 
-  validates_uniqueness_of :email 
+  validates :email, email: true 
   validates_presence_of :password, :on => :create 
   validates_presence_of :password_confirmation, :on => :create  
 
