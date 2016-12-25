@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  
   before_action :authenticate, if: -> {Rails.env.production?} 
   before_action :authenticate_user!, :except => [:show, :index]
   before_action :set_photo, :only => [:show]

@@ -2,6 +2,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	def all
 		 @user = User.from_omniauth(request.env["omniauth.auth"])
         # raise request.env["omniauth.auth"].to_yaml 
+
+
         # byebug
     	if @user.persisted? 
     		flash.notice = 'Signed in' if @user.confirmed_at 

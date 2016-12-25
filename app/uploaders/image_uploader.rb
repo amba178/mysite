@@ -2,6 +2,8 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 
+
+
   # Include RMagick or MiniMagick support:
   include CarrierWaveDirect::Uploader 
   include CarrierWave::RMagick
@@ -48,6 +50,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [410, 380]
   end
+
+
+
+  # def filename 
+  #  if original_filename 
+  #    @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+  #    "#{@name}.#{file.extension}"
+  #  end
+
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
