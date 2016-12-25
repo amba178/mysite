@@ -11,7 +11,9 @@ jQuery(function() {
 });
 
 window.fbAsyncInit = function(){ 
+
 	FB.init({appId: '<%= ENV["FACEBOOK_API_ID"] %>', cookie: true});
+	
 	$('#sign-in').click(function(e) {
 		e.preventDefault()
 		FB.login(function(response) {
@@ -26,7 +28,6 @@ window.fbAsyncInit = function(){
     	if (response.authResponse) {
      	 return FB.logout();
     	}
-
   	});
   		return true;
 	});   
