@@ -6,4 +6,22 @@ RSpec.describe User, :type => :model do
  			expect(FactoryGirl.create(:user)).to be_valid 
  		end
  	end
+ 	
+ 	describe 'users' do 
+ 		it { should have_db_column(:first_name) }
+ 		it { should have_db_column(:last_name) }
+ 		it { should have_db_column(:image) }
+ 		it { should have_db_column(:email) }
+ 		it { should have_db_column(:nickname) }
+ 		it { should have_db_column(:auth_token) }
+ 		it { should have_db_column(:provider) }
+ 		it { should have_db_column(:uid) }
+ 		it { should have_db_index(:email) } 
+ 		it { should validate_uniqueness_of(:email)} 
+ 	end
+
+ 	describe 'associations' do
+ 		it { should have_many(:charges) }
+ 	end
+
 end

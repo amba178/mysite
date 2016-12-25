@@ -1,6 +1,6 @@
 FactoryGirl.define do
 	sequence :email do |n|
-		Faker::Internet.free_email 
+		Faker::Internet.free_email.downcase  
 	end
 	factory :user do
 		first_name Faker::Name.first_name
