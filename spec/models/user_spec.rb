@@ -21,8 +21,13 @@ RSpec.describe User, :type => :model do
  	end
 
  	describe 'valid email' do
- 		let(:new_user){FactoryGirl.create(:user)} 
- 		
+ 		it { should allow_value('salemamba@gmail.com').for(:email)}
+ 		it { should allow_value('alikadir123@yahoo.net').for(:email)}
+ 	end
+
+ 	describe 'invalid email' do
+ 		it { should_not allow_value('salemamba@gmail').for(:email)}
+ 		it { should_not allow_value('alikadir123yahoo.net').for(:email)}
  	end
 
  	describe 'associations' do

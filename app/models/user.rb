@@ -32,11 +32,10 @@ class User < ApplicationRecord
     	user.password = token
       user.password_confirmation = token 
       user.skip_confirmation_auth
-    	# user.first_name = auth.info.name   # assuming the user model has a name
-    	user.image = auth.info.image # assuming the user model has an image
+    	user.image = auth.info.image
       user.save!
-
- 	 end
+    end
+    
   end
 
   def self.new_with_session(params, session)
