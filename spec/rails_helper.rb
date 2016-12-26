@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'byebug'
 require 'support/factory_girl'
+require 'support/controller_macros'
 require 'shoulda/matchers'
 require 'capybara/poltergeist'
 require 'devise'
@@ -72,6 +73,8 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config| 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include  Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller 
   config.include Devise::Test::ControllerHelpers, type: :view
 end
