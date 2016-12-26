@@ -8,9 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :timeoutable,
          :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
+
   validates_presence_of :first_name, :last_name
-  validates_presence_of :email 
-  validates_uniqueness_of :email 
+  validates :email, email: true 
   validates_presence_of :password, :on => :create 
   validates_presence_of :password_confirmation, :on => :create  
 
@@ -32,11 +32,10 @@ class User < ApplicationRecord
     	user.password = token
       user.password_confirmation = token 
       user.skip_confirmation_auth
-    	# user.first_name = auth.info.name   # assuming the user model has a name
-    	user.image = auth.info.image # assuming the user model has an image
+    	user.image = auth.info.image
       user.save!
-
- 	 end
+    end
+    
   end
 
   def self.new_with_session(params, session)
