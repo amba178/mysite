@@ -45,6 +45,7 @@ gem 'ancestry'
 gem 'ffaker'
 gem 'faker'
 gem 'bootstrap-will_paginate'
+gem 'geocoder'
 # gem 'responder'
 # gem 'capistrano-rails', group: :development
 

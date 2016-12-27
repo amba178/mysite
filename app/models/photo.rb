@@ -2,6 +2,8 @@ class Photo < ApplicationRecord
 	mount_uploader :image, ImageUploader 
 	attr_accessor :secure
 	has_many :posts 
+	geocoded_by :address 
+	after_validation :geocode, :if => :address_changed? 
 
 	after_save :enqueue_image
 

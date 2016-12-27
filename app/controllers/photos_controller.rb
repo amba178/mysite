@@ -41,7 +41,8 @@ class PhotosController < ApplicationController
 
   private 
   	def photo_params
-  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description, :parent_id)
+  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description, 
+                                    :parent_id, :longitude, :latitude, :address)
   	end
 
     def set_photo
