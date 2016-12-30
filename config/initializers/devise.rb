@@ -162,7 +162,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  config.email_regexp = /\A[\w+\-.]+@[a-z\d\-]+(\[a-z\d\-]+)*\.[a-z]+\z/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -253,11 +253,11 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # config.omniauth :facebook, "APP_ID", "APP_SECRET", scope: 'email', info_fields: 'email,name'
-
   config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'https://develop-sagan.herokuapp.com/'
+
   config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'http://localhost:3000/auth/facebook/callback', scope: 'email, publish_actions'
 
-
+#   config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'https://develop-sagan.herokuapp.com/auth/facebook/callback', scope: 'email, publish_actions
   # ==> Warden configuration/auth/facebook/callback
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
