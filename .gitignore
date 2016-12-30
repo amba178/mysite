@@ -16,7 +16,7 @@
 
 # Dev Machines
 .DS_Store
-*/.DS_Store
+
 
 # Ignore Byebug command history file.
 .byebug_history
