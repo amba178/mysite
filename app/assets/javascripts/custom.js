@@ -4,6 +4,11 @@ ready = function(){
 }
 $(document).on("turbolinks:load", function() {
 
+       // alert("loaded")
+     $('body').prepend('<div id="fb-root"></div>');
+     
+	
+
 	if ($('#new_post').length) {
 
 		$('#new-comment-id').hide();
