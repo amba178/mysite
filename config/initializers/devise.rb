@@ -255,9 +255,10 @@ Devise.setup do |config|
   # config.omniauth :facebook, "APP_ID", "APP_SECRET", scope: 'email', info_fields: 'email,name'
   config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'https://develop-sagan.herokuapp.com/'
 
-  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'http://localhost:3000/auth/facebook/callback', scope: 'email, publish_actions'
+  # config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'http://localhost:3000/auth/facebook/callback', scope: 'email, publish_actions'
 
-#   config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'https://develop-sagan.herokuapp.com/auth/facebook/callback', scope: 'email, publish_actions
+  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'https://develop-sagan.herokuapp.com/auth/facebook/callback', scope: 'email, publish_actions'
+  
   # ==> Warden configuration/auth/facebook/callback
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
