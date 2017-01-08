@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe RegistrationsController, :type => :controller do
+describe RegistrationsController, :type => :controller do
 
     it "on create success" do 
         @request.env["devise.mapping"] = Devise.mappings[:user]
