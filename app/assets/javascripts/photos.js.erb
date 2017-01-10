@@ -1,7 +1,7 @@
 
 
 	window.initMap= function() {
-        var photo = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
+        var photo = {lat:  parseFloat($('#map').data('photo').latitude) , lng: parseFloat($('#map').data('photo').longitude)};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
           center: photo
