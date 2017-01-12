@@ -8,7 +8,7 @@
 
 		=image_tag @photo.image_url(:thumb).to_s, class: 'img-thumbnail'
 
-		-# =image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@photo.latitude},#{@photo.longitude}&zoom=8&size=350x300&markers=color:blue%7Clabel:B%7C#{@photo.latitude},#{@photo.longitude}&key=#{ENV['GOOGLE_MAP_API_KEY']}", class: 'img-thumbnail'  
+		=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@photo.latitude},#{@photo.longitude}&zoom=8&size=350x300&markers=color:blue%7Clabel:B%7C#{@photo.latitude},#{@photo.longitude}&key=AIzaSyCq9314Upd-gDtNV6MONbTVEo-g5lxrUSI", class: 'img-thumbnail'  
 
  
   
@@ -18,8 +18,8 @@
 
 		- meta fa:  {app_id: "#{ENV['FACEBOOK_API_ID']}"}  
 
-		%p
-			= content_tag "div", nil, id: 'map' , data: {photo: @photo}
+		-# %p
+		-# 	= content_tag "div", nil, id: 'map' , data: {photo: @photo}
 
 
 
