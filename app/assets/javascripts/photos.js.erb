@@ -1,3 +1,5 @@
+ $(document).on('turbolinks:load', function(){
+
   window.initMap= function() {
         var photo = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -44,6 +46,8 @@
       cache: true
     });
   });
+
+});
 
 
 
