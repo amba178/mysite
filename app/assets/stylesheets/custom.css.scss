@@ -17,6 +17,9 @@ img#nav-image {
   border: 3px solid #fff;
 
 }
+.btn.btn-success.btn-xs{
+  display: inline-block !important;
+}
 .img-circle {
   border-radius: 50%;
   border: 3px solid #004d00;
@@ -168,6 +171,7 @@ ul.devise-shard-list{
 }
 p#share-paragraph{
  margin-top: 5px;
+ display: inline-block;
 }
 .btn-share{
   background-color: #337ab7;

@@ -14,7 +14,7 @@
   
 
 		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
-		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
+		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'photos', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
 
 		- meta fa:  {app_id: "#{ENV['FACEBOOK_API_ID']}"}  
 
@@ -24,12 +24,16 @@
 
 
 		%p{id: 'share-paragraph ', class: "text-center"}
+			%span
+				=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos/#{@photo.id}", class: 'btn btn-success btn-xs' do 
+					%span Tweet
+					=fa_icon 'twitter', class: 'fa-1x'
 			
-			=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos/#{@photo.id}", class: 'btn btn-primary btn-xs btn-share' do 
-				%span Tweet
-				=fa_icon 'twitter', class: 'fa-1x'
+			-# =link_to "https://www.facebook.com/sharer.php?u=https://develop-sagan.herokuapp.com/photos/#{@photo.id}&display=popup&app_id=#{ENV['FACEBOOK_API_ID']}&ref=plugin", id: 'facebook_share_link',class: "btn btn-primary btn-xs btn-share" do 
+			-# 	%span Share
+			-# 	=fa_icon 'facebook', class: 'fa-1x'
 			
-			=link_to "#", id: 'facebook_share_link',class: "btn btn-primary btn-xs btn-share" do 
+			%span{id: "shareBtn", class: "btn btn-success btn-xs"} 
 				%span Share
 				=fa_icon 'facebook', class: 'fa-1x'
 

@@ -33,24 +33,24 @@
 		  	});
 		  		return true;
 			});
-			$('#facebook_share_link').click(function(event) {
-				/* Act on the event */
-				var url = 'https://develop-sagan.herokuapp.com/photos/' + $('#map').data('photo').id;
-				FB.ui(
-		  		{
-		   			 method: 'share_open_graph',
-		   			 action_type: 'og.likes',
-		   			 action_properties: JSON.stringify({
-                              object: url,
-                        })
-		   			
-		  		},
-		  				// callback
-		 			 function(response) {
-		    			 console.log(response);
-		   		});
-			}); 
 
-		  
+		document.getElementById('shareBtn').onclick = function() {
+  			FB.ui({
+    			method: 'share_open_graph',
+    			action_type: 'og.shares' , 
+    			display: 'popup',
+    			action_properties: JSON.stringify({
+    				object: 'http://develop-sagan.herokuapp.com/photos/' + $('#map').data('photo').id 
+    			}),
+  				}, 
+  				function(response){
+
+  				});
 		}
-		});
+
+		
+		}
+
+	});
+
+
