@@ -45,6 +45,18 @@
   				}, 
   				function(response){
 
+  					if(response && !response.error){
+  						document.getElementById('result').innerHTML =
+             				'<a href=\"https://www.facebook.com/me/activity/' +
+             					response.id + '\">' +
+             					'Story created.  ID is ' +
+             					response.id + '</a>';
+  					}else{
+  						document.getElementById('result').innerHTML =
+             					'Error: ' + response.error.message;
+  					}
+
+
   				});
 		}
 
