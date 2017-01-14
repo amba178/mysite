@@ -1,34 +1,56 @@
 
-jQuery(function() { 
+ $(document).on('turbolinks:load', function(){
 
-	$('body').prepend('<div id="fb-root"></div>')
+		jQuery(function() { 
 
-	$.ajax({
-		url: "https://connect.facebook.net/en_US/all.js",
-		dataType: 'script',
-		cache: true
-	});
-});
+			$('body').prepend('<div id="fb-root"></div>')
 
-window.fbAsyncInit = function(){ 
-
-	FB.init({appId: '<%= ENV["FACEBOOK_API_ID"] %>', cookie: true});
-	
-	$('#sign-in').click(function(e) {
-		e.preventDefault()
-		FB.login(function(response) {
-  			if (response.authResponse) {
-    		 return window.location = '/auth/facebook/callback';
-  			}
+			$.ajax({
+				url: "https://connect.facebook.net/en_US/all.js",
+				dataType: 'script',
+				cache: true
+			});
 		});
-	});
 
-	$('#sign-out').click(function(e) {
- 		 FB.getLoginStatus(function(response) {
-    	if (response.authResponse) {
-     	 return FB.logout();
-    	}
-  	});
-  		return true;
-	});   
-}
+		window.fbAsyncInit = function(){ 
+
+			FB.init({appId: '<%= ENV["FACEBOOK_API_ID"] %>', cookie: true});
+			
+			$('#sign-in').click(function(e) {
+				e.preventDefault()
+				FB.login(function(response) {
+		  			if (response.authResponse) {
+		    		 return window.location = '/auth/facebook/callback';
+		  			}
+				});
+			});
+
+			$('#sign-out').click(function(e) {
+		 		 FB.getLoginStatus(function(response) {
+		    	if (response.authResponse) {
+		     	 return FB.logout();
+		    	}
+		  	});
+		  		return true;
+			});
+			$('#facebook_share_link').click(function(event) {
+				/* Act on the event */
+				var url = 'https://develop-sagan.herokuapp.com/photos/' + $('#map').data('photo').id;
+				FB.ui(
+		  		{
+		   			 method: 'share_open_graph',
+		   			 action_type: 'og.likes',
+		   			 action_properties: JSON.stringify({
+                              object: url,
+                        })
+		   			
+		  		},
+		  				// callback
+		 			 function(response) {
+		    			 console.log(response);
+		   		});
+			}); 
+
+		  
+		}
+		});
