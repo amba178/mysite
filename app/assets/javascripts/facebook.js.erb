@@ -46,14 +46,9 @@
   				function(response){
 
   					if(response && !response.error){
-  						document.getElementById('result').innerHTML =
-             				'<a href=\"https://www.facebook.com/me/activity/' +
-             					response.id + '\">' +
-             					'Story created.  ID is ' +
-             					response.id + '</a>';
+  						alert("Successfully posted ID: " + response.id);
   					}else{
-  						document.getElementById('result').innerHTML =
-             					'Error: ' + response.error.message;
+  						alert('Error: ' + response.error.message);
   					}
 
 
