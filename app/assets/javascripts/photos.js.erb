@@ -1,5 +1,4 @@
 
-
 	window.initMap= function() {
         var photo = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,8 +39,8 @@
 
 
 	jQuery(function() { 
-     	 $.ajax({
-			url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB0q5WY2HAzSPHt_8wUpBA3Pv82T7TKJaE&callback=initMap',
+     	$.ajax({
+			url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCq9314Upd-gDtNV6MONbTVEo-g5lxrUSI&callback=initMap',
 			dataType: 'script',
 			cache: true
 		});
