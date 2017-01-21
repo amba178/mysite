@@ -14,6 +14,7 @@
 //= require jquery.turbolinks 
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery-fileupload
 //= require_tree .
 //= require bootstrap-sprockets
 //= require turbolinks

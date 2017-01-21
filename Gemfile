@@ -46,6 +46,8 @@ gem 'ffaker'
 gem 'faker'
 gem 'bootstrap-will_paginate'
 gem 'geocoder'
+gem "jquery-fileupload-rails"
+
 # gem 'responder'
 # gem 'capistrano-rails', group: :development
 
