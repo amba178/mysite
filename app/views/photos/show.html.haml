@@ -5,39 +5,20 @@
 		%h4{class: "text-center google-font-tangerine"}
 			= "#{@photo.name} is taken at approximate area below"
 		%hr 
-
-		=image_tag @photo.image_url(:thumb).to_s, class: 'img-thumbnail'
-
-		-# =image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@photo.latitude},#{@photo.longitude}&zoom=8&size=350x300&markers=color:blue%7Clabel:B%7C#{@photo.latitude},#{@photo.longitude}&key=AIzaSyCq9314Upd-gDtNV6MONbTVEo-g5lxrUSI", class: 'img-thumbnail'  
-
- 
-  
-
-		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}" }
-		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'photos', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image_url(:thumb).to_s}", image: {secure_url: "#{@photo.image_url(:thumb).to_s}"} }
-
+		=image_tag @photo.image, class: 'img-thumbnail'
+		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.description, image: "#{@photo.image}" }
+		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'photos', title: 'Develop Sagan', description: @photo.description, image: "#{@photo.image}", image: {secure_url: "#{@photo.image}"} }
 		- meta fa:  {app_id: "#{ENV['FACEBOOK_API_ID']}"}  
-
 		%p
 			= content_tag "div", nil, id: 'map' , data: {photo: @photo}
-
-
-
 		%p{id: 'share-paragraph ', class: "text-center"}
 			%span
 				=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos/#{@photo.id}", class: 'btn btn-success btn-xs' do 
 					%span Tweet
 					=fa_icon 'twitter', class: 'fa-1x'
-			
-			-# =link_to "https://www.facebook.com/sharer.php?u=https://develop-sagan.herokuapp.com/photos/#{@photo.id}&display=popup&app_id=#{ENV['FACEBOOK_API_ID']}&ref=plugin", id: 'facebook_share_link',class: "btn btn-primary btn-xs btn-share" do 
-			-# 	%span Share
-			-# 	=fa_icon 'facebook', class: 'fa-1x'
-			
 			%span{id: "shareBtn", class: "btn btn-success btn-xs"} 
 				%span Share
 				=fa_icon 'facebook', class: 'fa-1x'
-
-
 	.col-md-offset-3.col-sm-offset-2.col-sm-8
 		#posts
 			- if !@posts.empty?

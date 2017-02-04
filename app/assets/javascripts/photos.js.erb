@@ -41,7 +41,7 @@
 
   jQuery(function() { 
       $.ajax({
-      url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCq9314Upd-gDtNV6MONbTVEo-g5lxrUSI&callback=initMap',
+      url: 'https://maps.googleapis.com/maps/api/js?key='+ '<%= ENV["GOOGLE_MAP_API_KEY"] %>' + '&callback=initMap',
       dataType: 'script',
       cache: true
     });

@@ -47,6 +47,7 @@ gem 'faker'
 gem 'bootstrap-will_paginate'
 gem 'geocoder'
 gem "jquery-fileupload-rails"
+gem 's3_direct_upload'
 
 # gem 'responder'
 # gem 'capistrano-rails', group: :development
