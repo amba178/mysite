@@ -1,5 +1,7 @@
 -provide(:title, "Photos")
-.clear-fix
+%h3.text-center.google-font-tangerine
+	Photo Galleries
+
 .row.well.well-lg#gallery-index
 	-@photos.each do |photo|
 		.col-sm-6.col-lg-4.col-md-4.col-xs-12.img-responsive
@@ -20,7 +22,7 @@
 	
 	-# 		=f.submit "Upload Image", class: 'btn btn-xs btn-primary btn-block'
 	= s3_uploader_form post: photos_url, as: "photo[image]" do 
-		
+
 		= file_field_tag :file, multiple: true 
 	
 	%script{ id: 'template-upload', type: 'text/x-tmpl'}

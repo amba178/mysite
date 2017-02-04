@@ -1,18 +1,47 @@
 jQuery(function() {
   return $('#fileupload').fileupload({
+    disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
+    imageMaxHeight: 600,
+    imageMaxWidth: 800,
+    imageCrop: true,
+    process: [
+            {
+                action: 'load',
+                fileTypes: /^image\/(gif|jpeg|png)$/,
+                maxFileSize: 20000000 // 20MB
+            },
+            {
+                action: 'resize',
+                maxWidth: 300,
+                maxHeight: 150,
+                minWidth: 80,
+                minHeight: 60
+            },
+            {
+                action: 'save'
+            }
+        ],
     add: function(e, data) {
-      var file, types;
+      var file, types, current_data;
+      current_data = $(this);
       types = /(\.|\/)(gif|jpe?g|png)$/i;
       file = data.files[0];
       if (types.test(file.type) || types.test(file.name)) {
+
         data.context = $(tmpl("template-upload", file));
         $('#fileupload').append(data.context);
-        return data.submit();
+        //resizing the image to desired size
+        data.process(function(){
+          return current_data.fileupload('process', data);
+        }).done(function() {
+           return data.submit();
+        });
       } else {
         return alert(file.name + " is not a gif, jpeg, or png image file");
       }
     },
     progress: function(e, data) {
+      console.log(data);
       var progress;
       if (data.context) {
         progress = parseInt(data.loaded / data.total * 100, 10);
