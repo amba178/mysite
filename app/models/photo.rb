@@ -2,15 +2,21 @@ class Photo < ApplicationRecord
 	# mount_uploader :image, ImageUploader 
 	attr_accessor :secure
 	has_many :posts 
-	geocoded_by :address 
-	after_validation :geocode, :if => :address_changed? 
-	before_create :default_name
+	belongs_to :location 
+	# geocoded_by :address 
+	# after_validation :geocode, :if => :address_changed? 
+	before_create :default_name 
+	before_create  :location
 
 	# after_save :enqueue_image, :enqueue_geo_location
 
 
 	def default_name
 		self.name ||= File.basename(image, '.*').titleize if image
+	end
+
+	def location
+		self.location = Location.last
 	end
 
 

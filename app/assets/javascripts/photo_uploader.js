@@ -41,7 +41,6 @@ jQuery(function() {
       }
     },
     progress: function(e, data) {
-      console.log(data);
       var progress;
       if (data.context) {
         progress = parseInt(data.loaded / data.total * 100, 10);
