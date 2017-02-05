@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+	before_action :authenticate_user!
+   # before_action :set_photo, :only => [:show]
+
   def new
   	@location = Location.new
   end
@@ -10,6 +13,7 @@ class LocationsController < ApplicationController
   	@location = Location.new(location_params)
   	session[:last_back] = request.env['HTTP_REFERER']
   	if @location.save
+  		flash.notice = "You can upload your photos now, choose file form below."
   		redirect_to photos_url
   	end
   end
