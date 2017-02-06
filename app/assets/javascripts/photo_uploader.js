@@ -4,10 +4,6 @@ jQuery(function() {
         add: function(e, data) {
           var file, types, current_data;
           types = /(\.|\/)(gif|jpe?g|png)$/i;
-          data.imageMaxHeight = 600;
-          data.imageMaxWidth = 800;
-          data.imageCrop = true;
-          // data.disableImageResize = /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent); 
           file = data.files[0];
 
           if (types.test(file.type) || types.test(file.name)) {
