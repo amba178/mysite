@@ -9,12 +9,8 @@ describe Photo, :type => :model do
  	
  	describe 'database' do
  		it { should have_db_column(:image) }
- 		it { should have_db_column(:address) }
- 		it { should have_db_column(:image_processed) }
- 		it { should have_db_column(:longitude) }
- 		it { should have_db_column(:latitude) }
  		it { should have_db_column(:name) }
- 		it { should have_db_column(:description) }
+ 		
  	end
 
  	describe 'associations' do

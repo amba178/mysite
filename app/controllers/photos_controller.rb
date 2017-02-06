@@ -6,8 +6,8 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all 
-    @uploader = Photo.new.image 
-    @uploader.success_action_redirect = new_photo_url 
+    # @uploader = Photo.new.image 
+    # @uploader.success_action_redirect = new_photo_url 
   end
 
   def show
@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
   end
 
   def new
-  	@photo = Photo.new(key: params[:key])
+  	@photo = Photo.new()
   end
 
   def create
@@ -41,8 +41,8 @@ class PhotosController < ApplicationController
 
   private 
   	def photo_params
-  		params.require(:photo).permit(:name, :image, :key, :image_processed, :description, 
-                                    :parent_id, :longitude, :latitude, :address)
+  		params.require(:photo).permit(:name, :image, :key, :description, 
+                                    :parent_id, :longitude, :latitude, :address, :location_id)
   	end
 
     def set_photo

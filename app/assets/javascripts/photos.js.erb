@@ -1,16 +1,18 @@
  $(document).on('turbolinks:load', function(){
 
   window.initMap= function() {
-        var photo = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
+     
+        var uluru = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
+        console.log(uluru);
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
-          center: photo
+          center: uluru
         });
        
         var contentString = '<div class="panel panel-info photo-scroll-disable">' + 
                         '<div class="panel-heading">' +
                         '<h6 class="text-center">' +
-                         $('#map').data('photo').name + 
+                         $('#map').data('photo').address + 
                          '</h6>'+
                         '</div>' + 
                         '<div class="panel-body">' + 
@@ -22,13 +24,13 @@
         });
 
       var labelIndex = 0; 
-      var labelName = $('#map').data('photo').name 
+      var labelName = $('#map').data('photo').address;
 
       var marker = new google.maps.Marker({
-        position: photo,
+        position: uluru,
         label: labelName[labelIndex++ % labelName.length],
         map: map,
-        title: $('#map').data('photo').name 
+        title: $('#map').data('photo').address
         })
 
        marker.addListener('mouseover', function() {
@@ -36,6 +38,7 @@
         });
         return this;
       }
+    
 
 
 
