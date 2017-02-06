@@ -13,8 +13,8 @@ script:
 - bundle exec  rails db:test:prepare
 - bundle exec  rails spec
 - bundle exec  rails cucumber
-services:
-- redis-server
+# services:
+# - redis-server
 env:
   global:
   - secure: UOjkzfbyPq3BA8Q4s2u1KHrQcgJQgr8RpW66b5ex/cKljQQs8Teva57xXfd1/0CVfYSUk8jEeuxyfryAx5WE0JwsjuNKsXOTGeoN28B5udx42MsBVR1MhdqnivSFWegTlRj2GgRdVtnQP+YBtqVjl3/zHOYSko3DP7HQgv8aHXdyja2EHjVZXMoriegFhdHbfXEwR7h4Xa/0yl7rNChDxX1tthDKj7cqv+YbX7b3Y42eNHkpGr02pIGGLxuanbCZFATO1Vzr4ll6K2qsY/F9rlptXgOL2S2FIJux3x/vi48L+OK5GYb1t2BvKj0Sd/vU1he8yoTKRrZdCYkHs68j/6v3j2Ob+b0Qf8lPXnTmN8NtQqlB18UiIuctxbU51sRPZbQ5Q+Tffi1GMXSeAymQfTouCPE47gPoy2+3Ns0T/MluxuBG/DgzZcIKiviLD21a/U9FP5YkMtf9psUOoevUw7bVj6Gu/56JMxB6d84zLAfQcu8EogOPMdx0Bm1SCQbfhjpfT8r9ecNF044rK96FH+VZ/k4xWHk4NpDyLM36E3yOn+VZ/zMMppAhwjJxMeQCkQFjDW6Lt+D8UdV59Gjfev5Mw+QIY5kbpfnkunG+QIF8ysZAWtLP1DhuIDNi2IbgU6GVonM12mi8er+43GewHCdMql0pZJMf0oD6caHysIw=

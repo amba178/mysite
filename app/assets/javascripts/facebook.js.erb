@@ -1,21 +1,15 @@
 
  $(document).on('turbolinks:load', function(){
-
 		jQuery(function() { 
-
 			$('body').prepend('<div id="fb-root"></div>')
-
 			$.ajax({
 				url: "https://connect.facebook.net/en_US/all.js",
 				dataType: 'script',
 				cache: true
 			});
 		});
-
 		window.fbAsyncInit = function(){ 
-
 			FB.init({appId: '<%= ENV["FACEBOOK_API_ID"] %>', cookie: true});
-			
 			$('#sign-in').click(function(e) {
 				e.preventDefault()
 				FB.login(function(response) {
@@ -24,7 +18,6 @@
 		  			}
 				});
 			});
-
 			$('#sign-out').click(function(e) {
 		 		 FB.getLoginStatus(function(response) {
 		    	if (response.authResponse) {
@@ -33,29 +26,26 @@
 		  	});
 		  		return true;
 			});
-
-		document.getElementById('shareBtn').onclick = function() {
-  			FB.ui({
-    			method: 'share_open_graph',
-    			action_type: 'og.shares' , 
-    			display: 'popup',
-    			action_properties: JSON.stringify({
-    				object: 'http://develop-sagan.herokuapp.com/photos/' + $('#map').data('photo').id 
-    			}),
-  				}, 
-  				function(response){
-
-  					if(response && !response.error){
-  						alert("Successfully posted. ");
-  					}else{
-  						alert('Error: ' + response.error.message);
-  					}
-
-
-  				});
+		if (typeof($('#map').data('photo')) != "undefined"){
+			document.getElementById('shareBtn').onclick = function() {
+	  			FB.ui({
+	    			method: 'share_open_graph',
+	    			action_type: 'og.shares' , 
+	    			display: 'popup',
+	    			action_properties: JSON.stringify({
+	    				object: 'http://develop-sagan.herokuapp.com/photos/' + $('#map').data('photo').id 
+	    			}),
+	  				}, 
+	  				function(response){
+	  					if(response && !response.error){
+	  						alert("Successfully posted. ");
+	  					}else{
+	  						alert('Error: ' + response.error.message);
+	  					}
+	  			});
+			}
 		}
-
-		
+	
 		}
 
 	});

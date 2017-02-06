@@ -72,9 +72,10 @@ img#face-pic{
 
 /*photo gallery well-lg*/
 .row.well.well-lg#gallery-index{
-  margin-top: 50px;
+  margin-top: 20px !important;
   margin-bottom: 5px;
 }
+
 
 // Thumbnail animation style 
 #gallery-index img {
@@ -279,7 +280,7 @@ li#new-comment-id::before {
 }
 
 #photo-show-page{
-  margin-left: 70px;
+  margin-left: 40px !important;
 
 }
 
@@ -489,9 +490,7 @@ fieldset[disabled] .btn-default.active {
 .img-responsive{
   display: inline;
 }
-.progress-bar{
-  color: #ADFF2F;
-}
+
 
 /*hr{
   margin-top: 0px;
@@ -948,5 +947,6 @@ h5{
 #map{
         height: 200px;
         width: 100%;
+       
       
 }
