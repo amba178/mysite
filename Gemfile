@@ -80,9 +80,9 @@ group :test do
 	gem 'cucumber-rails-training-wheels'
 	gem 'launchy'
 	gem "capybara"
-	gem 'selenium-webdriver'
 	gem 'webrat'
 	gem 'selenium-client'
+  gem 'selenium-webdriver', '~> 2.53'
 end
 
 group :development do
