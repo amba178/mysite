@@ -1,18 +1,24 @@
+(function($, window){ 
+    $(function() {
+      $('#fileupload').fileupload({
 
-jQuery(function() {
-      return $('#fileupload').fileupload({
-    
+        disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
+        imageMaxHeight: 600,
+        imageMaxWidth: 800,
+        imageCrop: true,
         add: function(e, data) {
-          var file, types, current_data;
+          var file, types, $this;
+          $this = $(this);
           types = /(\.|\/)(gif|jpe?g|png)$/i;
           file = data.files[0];
-
-          if (types.test(file.type) || types.test(file.name)) {
-
+          if (types.test(file.type) || types.test(file.name)) {   
             data.context = $(tmpl("template-upload", file));
             $('#fileupload').append(data.context);
-            return data.submit();
-     
+            data.process(function(){
+              return $this.fileupload('process', data);
+            }).done(function() {
+               return data.submit();
+            });
           } else {
             return alert(file.name + " is not a gif, jpeg, or png image file");
           }
@@ -44,3 +50,4 @@ jQuery(function() {
         }
       });
     });
+})(jQuery, window);

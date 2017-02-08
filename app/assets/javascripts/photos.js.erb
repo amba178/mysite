@@ -1,13 +1,12 @@
  $(document).on('turbolinks:load', function(){
 
-  window.initMap= function() {
-     
+  if(!(typeof($('#map').data('photo')) == 'undefined')) { 
+    window.initMap= function() {
         var uluru = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
           center: uluru
         });
-       
         var contentString = '<div class="panel panel-info photo-scroll-disable">' + 
                         '<div class="panel-heading">' +
                         '<h6 class="text-center">' +
@@ -24,23 +23,18 @@
 
       var labelIndex = 0; 
       var labelName = $('#map').data('photo').address;
-
       var marker = new google.maps.Marker({
         position: uluru,
         label: labelName[labelIndex++ % labelName.length],
         map: map,
         title: $('#map').data('photo').address
         })
-
        marker.addListener('mouseover', function() {
         infowindow.open(map, marker);
         });
         return this;
       }
     
-
-
-
   jQuery(function() { 
       $.ajax({
       url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCq9314Upd-gDtNV6MONbTVEo-g5lxrUSI&callback=initMap',
@@ -48,6 +42,7 @@
       cache: true
     });
   });
+}
 
 });
 
