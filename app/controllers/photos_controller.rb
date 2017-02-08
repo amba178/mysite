@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   
   # before_action :authenticate, if: -> {Rails.env.production? && curren_user.==''} 
+  respond_to :html, :haml,  :json
   before_action :authenticate_user!, :except => [:show, :index]
   before_action :set_photo, :only => [:show]
 
@@ -21,13 +22,10 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    if @photo.save 
-      flash.now.notice = "Successfully created uploaded photo."
-      redirect_to photos_url 
-    else
-      render 'new'
-    end
+    @photo = Photo.create(photo_params)
+    respond_to do |format|
+      format.js {}
+    end   
   end
 
   def edit

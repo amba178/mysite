@@ -17,8 +17,9 @@
 				
 - if user_signed_in?
 	=link_to_if  user_signed_in?, "Do you want to upload photos? Fill in the place first", new_location_path if session[:last_back].nil? 
+	-# - session[:last_back]=nil
 	-if !session[:last_back].nil?
-		
+		- session[:last_back]=nil
 		= s3_uploader_form post: photos_url, as: "photo[image]" do 
 			= file_field_tag :file, multiple: true 
 	
