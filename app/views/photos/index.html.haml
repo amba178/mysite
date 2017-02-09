@@ -1,4 +1,5 @@
 -provide(:title, "Photos")
+- content_for :no_turbolink, true 
 %h3.text-center.google-font-tangerine
 	Photo Galleries
 
@@ -10,7 +11,7 @@
 				=photo.name
 		
 			= image_tag photo.image, class: 'img-thumbnail' if photo.image 
-			=link_to "Comment/Share on social media", photo_path(photo.id),id: 'photo-show-page'
+			=link_to "Comment/Share on social media", photo_path(photo.id),id: 'photo-show-page', data: {turbolinks: false}
 			
 			-# - meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{photo.image}" }
 
