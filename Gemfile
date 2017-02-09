@@ -48,6 +48,8 @@ gem 'bootstrap-will_paginate'
 gem 'geocoder'
 gem "jquery-fileupload-rails"
 gem 's3_direct_upload'
+gem 'roadie', '~> 3.1.1'
+gem 'twilio-ruby'
 
 # gem 'responder'
 # gem 'capistrano-rails', group: :development
