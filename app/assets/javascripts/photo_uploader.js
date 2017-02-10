@@ -3,8 +3,8 @@
       $('#fileupload').fileupload({
 
         disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
-        imageMaxHeight: 500,
-        imageMaxWidth: 300,
+        imageMaxHeight: 300,
+        imageMaxWidth: 500,
         imageCrop: true,
         add: function(e, data) {
           var file, types, $this;
