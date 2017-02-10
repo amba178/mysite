@@ -2,4 +2,4 @@
 	%h4{class: "text-center google-font-tangerine"}
 		=@photo.name
 	= image_tag @photo.image, class: 'img-thumbnail' if @photo.image 
-	=link_to "Comment/Share on social media", photo_path(@photo.id), id: 'photo-show-page'
+	=link_to "Comment/Share on social media", photo_path(@photo.id), id: 'photo-show-page', data: {turbolinks: false }
