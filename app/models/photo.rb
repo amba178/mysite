@@ -12,7 +12,8 @@ class Photo < ApplicationRecord
 
 
 	def default_name
-		self.name ||= File.basename(image, '.*').titleize if image
+		# self.name ||= File.basename(image, '.*').titleize if image
+		self.name ||= "Best of Sagan/Burji"
 	end
 
 	def location
