@@ -18409,7 +18409,7 @@ $(document).on('click', '.content', function(){
 			});
 		});
 		window.fbAsyncInit = function(){ 
-			FB.init({appId: '1007318522712155', cookie: true});
+			FB.init({appId: '1007318522712155', version: 'v2.0', cookie: true});
 			$('#sign-in').click(function(e) {
 				e.preventDefault()
 				FB.login(function(response) {
