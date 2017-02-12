@@ -19,6 +19,7 @@
 *.log
 *.sql
 *.sqlite
+#closes #4, closes #5, closes #6' 
 
 #Packages #
 *.7z
