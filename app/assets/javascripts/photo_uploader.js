@@ -9,7 +9,7 @@
         add: function(e, data) {
           var file, types, $this;
           $this = $(this);
-          types = /(\.|\/)(gif|jpe?g|png)$/i;
+          types = /(\.|\/)(gif|jpe?g|png|mov)$/i;
           file = data.files[0];
           if (types.test(file.type) || types.test(file.name)) {   
             data.context = $(tmpl("template-upload", file));
@@ -20,7 +20,7 @@
                return data.submit();
             });
           } else {
-            return alert(file.name + " is not a gif, jpeg, or png image file");
+            return alert(file.name + " is not a gif, jpeg, mov or png image file");
           }
         },
         progress: function(e, data) {
