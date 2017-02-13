@@ -10,7 +10,7 @@
 		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.location.description, image: "#{@photo.image}" }
 		- meta fa:  {app_id: "#{ENV['FACEBOOK_API_ID']}"}  
 		%p
-			= content_tag "div", nil, id: 'map' , data: {photo: @photo}
+			= content_tag "div", nil, id: 'map' , data: {photo: @photo, location: @photo.location}
 		%p{id: 'share-paragraph ', class: "text-center"}
 			%span
 				=link_to "https://twitter.com/intent/tweet?url=https://develop-sagan.herokuapp.com/photos/#{@photo.id}", class: 'btn btn-success btn-xs' do 
