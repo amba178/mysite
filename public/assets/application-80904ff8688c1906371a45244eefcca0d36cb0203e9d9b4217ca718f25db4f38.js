@@ -18521,9 +18521,10 @@ $(document).on('click', '.content', function(){
 })(jQuery, window);
  $(document).on('turbolinks:load', function(){
 
-  if(!(typeof($('#map').data('photo')) == 'undefined')) { 
+  if(!(typeof($('#map').data('location')) == 'undefined')) { 
     window.initMap= function() {
-        var uluru = {lat:  $('#map').data('photo').latitude , lng: $('#map').data('photo').longitude};
+        var uluru = {lat:  $('#map').data('location').latitude , lng: $('#map').data('location').longitude};
+        console.log(uluru);
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
           center: uluru
@@ -18531,11 +18532,11 @@ $(document).on('click', '.content', function(){
         var contentString = '<div class="panel panel-info photo-scroll-disable">' + 
                         '<div class="panel-heading">' +
                         '<h6 class="text-center">' +
-                         $('#map').data('photo').address + 
+                         $('#map').data('location').address + 
                          '</h6>'+
                         '</div>' + 
                         '<div class="panel-body">' + 
-                        $('#map').data('photo').description +
+                        $('#map').data('location').description +
                         '</div>'+
                         '</div>';
         var infowindow = new google.maps.InfoWindow({
@@ -18543,12 +18544,12 @@ $(document).on('click', '.content', function(){
         });
 
       var labelIndex = 0; 
-      var labelName = $('#map').data('photo').address;
+      var labelName = $('#map').data('location').address;
       var marker = new google.maps.Marker({
         position: uluru,
         label: labelName[labelIndex++ % labelName.length],
         map: map,
-        title: $('#map').data('photo').address
+        title: $('#map').data('location').address
         })
        marker.addListener('mouseover', function() {
         infowindow.open(map, marker);
