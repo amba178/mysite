@@ -48,7 +48,9 @@ gem 'bootstrap-will_paginate'
 gem 'geocoder'
 gem "jquery-fileupload-rails"
 gem 's3_direct_upload'
-gem 'yt', '~> 0.0.0'
+gem 'youtube_it'
+
+
 
 # gem 'responder'
 # gem 'capistrano-rails', group: :development
