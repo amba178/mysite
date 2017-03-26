@@ -1,7 +1,7 @@
 class Photo < ApplicationRecord
 	# mount_uploader :image, ImageUploader 
 	attr_accessor :secure
-	has_many :posts 
+	has_many :posts, as: :commentable
 	belongs_to :location 
 	# geocoded_by :address 
 	# after_validation :geocode, :if => :address_changed? 

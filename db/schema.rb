@@ -53,19 +53,24 @@ ActiveRecord::Schema.define(version: 20170309233756) do
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "commentable_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "location_id"
+    t.index ["commentable_id"], name: "index_photos_on_commentable_id", using: :btree
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "content",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "content",          limit: 65535
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "ancestry"
     t.integer  "photo_id"
     t.integer  "video_id"
     t.index ["ancestry"], name: "index_posts_on_ancestry", using: :btree
+    t.index ["commentable_type", "commentable_id"], name: "index_posts_on_commentable_type_and_commentable_id", using: :btree
     t.index ["photo_id"], name: "index_posts_on_photo_id", using: :btree
     t.index ["video_id"], name: "index_posts_on_video_id", using: :btree
   end
@@ -105,14 +110,11 @@ ActiveRecord::Schema.define(version: 20170309233756) do
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vidoes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_videos_on_commentable_type_and_commentable_id", using: :btree
   end
 
   add_foreign_key "posts", "videos"
