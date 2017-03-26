@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213233142) do
+ActiveRecord::Schema.define(version: 20170309233756) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 20170213233142) do
     t.datetime "updated_at",               null: false
     t.string   "ancestry"
     t.integer  "photo_id"
+    t.integer  "video_id"
     t.index ["ancestry"], name: "index_posts_on_ancestry", using: :btree
     t.index ["photo_id"], name: "index_posts_on_photo_id", using: :btree
+    t.index ["video_id"], name: "index_posts_on_video_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,4 +103,17 @@ ActiveRecord::Schema.define(version: 20170213233142) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vidoes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "posts", "videos"
 end
