@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 
   def show
     @posts = @photo.posts.order("created_at")
-    session[:photo_id]=@photo.id 
+    session[:commentable_id]=@photo.id 
     @post = Post.new(:parent_id => params[:parent_id])
   end
 
@@ -39,14 +39,14 @@ class PhotosController < ApplicationController
 
   private 
   	def photo_params
-  		params.require(:photo).permit(:name, :image, :key, :description, 
-                                    :parent_id, :longitude, :latitude, :address, :location_id)
+  		params.require(:photo).permit(:name, :image_video_url, :key, :description, 
+                                    :comentable_id, :longitude, :latitude, :address, :location_id)
   	end
 
     def set_photo
       @photo = Photo.find(params[:id]) if !params[:id].nil?
 
-      @photo = Photo.find(params[:post][:photo_id]) if !params[:post].nil?
+      @photo = Photo.find(params[:post][:commentable_id]) if !params[:post].nil?
     end
 
     def authenticate

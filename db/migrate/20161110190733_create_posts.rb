@@ -8,4 +8,5 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     end
     add_index :posts, [:commentable_type, :commentable_id]
   end
+  #or can be simplified as t.references :commentable, polymorphic: true, index: true
 end

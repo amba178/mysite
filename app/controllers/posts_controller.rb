@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new
-     @post = Post.new(:parent_id => params[:parent_id],:photo_id => params[:photo_id])
+     @post = Post.new(:parent_id => params[:parent_id], :commentable_id=> params[:commentable_id])
      # @photo = Photo.find(session[:photo_id])
 
   end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     
-    @photo = Photo.find(@post.photo_id)
+    @photo = Photo.find(@post.commentable_id)
    
     respond_to do |format|
       if @post.save 
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   #quite not right....
   def destroy
     @post = Post.find(params[:id])
-    @photo = Photo.find(session[:photo_id])
+    @photo = Photo.find(session[:commentable_id])
     @posts = @photo.posts.order("created_at")
     render "photos/show" 
     @post.destroy
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-  		params.require(:post).permit(:content, :photo_id, :parent_id)
+  		params.require(:post).permit(:content, :commentable_id, :parent_id)
   	end
 end

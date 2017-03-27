@@ -3,7 +3,6 @@ class CreatePhotos < ActiveRecord::Migration[5.0]
     create_table :photos do |t|
       t.string :name
       t.string :image
-      t.references :commentable, polymorpic: true, index: true  
       t.timestamps
     end
     
