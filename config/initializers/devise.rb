@@ -253,7 +253,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # config.omniauth :facebook, "APP_ID", "APP_SECRET", scope: 'email', info_fields: 'email,name'
-  config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'https://develop-sagan.herokuapp.com/'
+  config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'http://127.0.0.1:3000/' if Rails.env.development? 
+  config.omniauth :twitter, ENV['CONSUMER_KEY'] , ENV['CONSUMER_SECRET'],    callback_url:    'https://develop-sagan.herokuapp.com/' if Rails.env.production? 
 
   config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET'], callback_url:    'http://localhost:3000/auth/facebook/callback', scope: 'email, publish_actions' if Rails.env.development?
 
