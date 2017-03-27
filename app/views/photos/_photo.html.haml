@@ -1,5 +1,10 @@
 .col-sm-6.col-lg-4.col-md-4.col-xs-12.img-responsive
 	%h4{class: "text-center google-font-tangerine"}
 		=@photo.name
-	= image_tag @photo.image, class: 'img-thumbnail' if @photo.image 
+	= image_tag @photo.image_video_url, class: 'img-thumbnail' if @photo.image_video_url 
 	=link_to "Comment/Share on social media", photo_path(@photo.id), id: 'photo-show-page', data: {turbolinks: false }
+
+
+
+
+	

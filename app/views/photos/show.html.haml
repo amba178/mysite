@@ -5,9 +5,9 @@
 		%h6{class: "text-center google-font-tangerine"}
 			= "#{@photo.name} is taken at approximate area below"
 		%hr 
-		=image_tag @photo.image, class: 'img-thumbnail'
-		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.location.description, image: "#{@photo.image}" }
-		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.location.description, image: "#{@photo.image}" }
+		=image_tag @photo.image_video_url, class: 'img-thumbnail'
+		- meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: @photo.name, description: @photo.location.description, image_video_url: "#{@photo.image_video_url}" }
+		- meta og: { url:  "https://develop-sagan.herokuapp.com/photos/#{@photo.id}", type: 'website', title: 'Develop Sagan', description: @photo.location.description, image_video_url: "#{@photo.image_video_url}" }
 		- meta fa:  {app_id: "#{ENV['FACEBOOK_API_ID']}"}  
 		%p
 			= content_tag "div", nil, id: 'map' , data: {photo: @photo, location: @photo.location}

@@ -40,7 +40,7 @@ class PhotosController < ApplicationController
   private 
   	def photo_params
   		params.require(:photo).permit(:name, :image_video_url, :key, :description, 
-                                    :comentable_id, :longitude, :latitude, :address, :location_id)
+                                    :commentable_id, :longitude, :latitude, :address, :location_id)
   	end
 
     def set_photo

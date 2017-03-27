@@ -10,7 +10,7 @@
 			%h4{class: "text-center google-font-tangerine"}
 				=photo.name
 		
-			= image_tag photo.image, class: 'img-thumbnail' if photo.image 
+			= image_tag photo.image_video_url, class: 'img-thumbnail' if photo.image_video_url 
 			=link_to "Comment/Share on social media", photo_path(photo.id),id: 'photo-show-page', data: {turbolinks: false}
 			
 			-# - meta twitter: { card: "summary_large_image", site: @salemA6, creator: @salemA6, title: photo.name, description: photo.description, image: "#{photo.image}" }
@@ -21,7 +21,7 @@
 	-# - session[:last_back]=nil
 	-if !session[:last_back].nil?
 		- session[:last_back]=nil
-		= s3_uploader_form post: photos_url, as: "photo[image]" do 
+		= s3_uploader_form post: photos_url, as: "photo[image_video_url]" do 
 			= file_field_tag :file, multiple: true 
 	
 	%script{ id: 'template-upload', type: 'text/x-tmpl'}

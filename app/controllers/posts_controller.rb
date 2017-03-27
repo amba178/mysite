@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new
-     @post = Post.new(:parent_id => params[:parent_id], :commentable_id=> params[:commentable_id])
+     @post = Post.new(:parent_id => params[:parent_id], :commentable_id => params[:commentable_id])
      # @photo = Photo.find(session[:photo_id])
 
   end
