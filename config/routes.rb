@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   
-
-
+  
   root to: 'static_pages#index'
-  resources :photos, :charges, :posts, :locations
+  resources :photos, :charges, :posts, :locations, :videos, only: [:index, :new, :create]
   resources :photos do 
     resources :posts 
   end
