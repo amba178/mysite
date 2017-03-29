@@ -23,7 +23,8 @@
 //= require jquery-fileupload/jquery.fileupload-validate
 //= require jquery-fileupload/vendor/tmpl 
 //= require jquery-fileupload/jquery.fileupload-image
-//= require twitter/bootstrap
-//= require_tree .
 //= require bootstrap-sprockets
+//= require bootstrap 
 //= require turbolinks
+//= require_tree .
+

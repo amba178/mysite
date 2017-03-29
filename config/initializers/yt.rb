@@ -4,4 +4,3 @@ Yt.configure do |config|
   config.api_key = ENV['GOOGLE_MAP_API_KEY']
 end
 
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE

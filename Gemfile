@@ -41,6 +41,7 @@ gem 'roadie', '~> 3.1.1'
 gem "koala", "~> 2.2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem  "omniauth-google-oauth2"
 gem 'ancestry'
 gem 'ffaker'
 gem 'faker'
