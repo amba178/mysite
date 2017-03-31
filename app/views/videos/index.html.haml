@@ -1,0 +1,46 @@
+
+- provide(:title, "video list")
+.jumbotron
+  .container
+    %h2 Share your videos with the world!
+    %p Click the button below to share your video from YouTube.
+    %p
+      = link_to 'Add video now!','#', class: 'btn btn-primary btn-lg'
+- if @videos.any?
+  .container
+    %h2{class: 'text-center'} Latest videos
+    %hr
+  
+    #player-wrapper
+    - @videos.in_groups_of(3) do |group|
+      .row
+        - group.each do |video|
+          - if video
+            .col-md-4
+              .thumbnail
+                .embed-responsive.embed-responsive-16by9
+                  %iframe{class: "embed-responsive-item", src: "http://www.youtube.com/embed/#{video.uid}"}
+                .caption
+                  %h6= video.title
+                  %p
+                    Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+                  -if !current_user.nil? && current_user.provider == 'google_oauth2'
+                    %p
+                      %span.glyphicon.glyphicon.glyphicon-thumbs-up
+                      = video.likes
+                      %span.glyphicon.glyphicon.glyphicon-thumbs-down
+                      = video.dislikes
+                  =link_to "Comment/like/dislike/share", video_path(video.id), class: "text-center"
+              -# .thumbnail
+              -#   = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+              -#               class: 'img-rounded'),                                                             |
+              -#     "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'                             |
+              -#   .caption
+              -#     %h6= video.title
+              -#     %p
+              -#       Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+              -#     %p
+              -#       %span.glyphicon.glyphicon.glyphicon-thumbs-up
+              -#       = video.likes
+              -#       %span.glyphicon.glyphicon.glyphicon-thumbs-down
+              -#       = video.dislikes

@@ -1,0 +1,18 @@
+- provide(:title, "Video detail")
+.row      
+  - if @video
+    .col-md-4.col-md-offset-4#show-video
+      .thumbnail
+        .embed-responsive.embed-responsive-16by9
+          %iframe{class: "embed-responsive-item", src: "http://www.youtube.com/embed/#{@video.uid}"}
+        .caption
+          %h6= @video.title
+          %p
+            Published at #{@video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+          -if !current_user.nil? && current_user.provider == 'google_oauth2'
+            %p
+              %span.glyphicon.glyphicon.glyphicon-thumbs-up
+              = @video.likes
+              %span.glyphicon.glyphicon.glyphicon-thumbs-down
+              = @video.dislikes
+          =link_to "<< Back to videos", videos_path

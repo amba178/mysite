@@ -47,9 +47,21 @@ img#nav-image {
     height: 60px;
     background-color: #f5f5f5;
 }
+
+#show-video{
+  margin-top: 15px !important;
+}
 .google-font-tangerine{
 
   font-family: 'Pacifico', cursive;
+}
+.glyphicon-thumbs-up{
+  color: #0b5fe5;
+
+}
+.glyphicon-thumbs-down{
+  color: #0b5fe5;
+  margin-left: 10px !important;
 }
 
 .footer-list-item, .footer-social-buttons li {
@@ -57,6 +69,11 @@ img#nav-image {
 }
 div.jumbotron{
   margin-top: 20px;
+}
+
+img.img-rounded{
+  margin-top: 15px;
+  margin-left: 15px !important;
 }
 
 .footer a {

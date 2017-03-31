@@ -1,2 +1,11 @@
-%h1 Videos#new
-%p Find me in app/views/videos/new.html.haml
+- provide(:title, "new video")
+%h1 New video
+
+=form_for @video do |f| 
+	= render 'shared/error_messages', object: f.object
+
+	.form-group
+		= f.label :link 
+		= f.text_field :link, class: 'form-control', required: true 
+		%span{class: "help-block"} A link to the video on YouTube. 
+	= f.submit class: 'btn btn-primary'  

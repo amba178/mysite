@@ -17,6 +17,7 @@
 				-else
 					%li{class: 'glyphicon glyphicon-user nav-glyphicon', id: 'nav-image'}
 				%li= link_to "Edit Profile", edit_user_registration_path
+				%li= link_to "Upload Video", "#" if current_user.provider == 'google_oauth2'
 				%li{id: "sign-out"}= link_to "Log out", destroy_user_session_path, method: :delete
 			-else 
 
