@@ -26,5 +26,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap 
 //= require turbolinks
+//= require jquery.bind_with_delay
 //= require_tree .
 

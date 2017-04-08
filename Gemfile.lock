@@ -697,7 +697,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   therubyracer
   therubyrhino
-  turbolinks (~> 5)
+  turbolinks (~> 5.0.0)
   twitter-bootstrap-rails!
   tzinfo (~> 1.2, >= 1.2.2)
   tzinfo-data

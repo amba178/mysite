@@ -1,10 +1,15 @@
 - provide(:title, "Video detail")
+- if !current_user.nil? && current_user.provider=="google_oauth2"
+  -account = Yt::Account.new refresh_token: current_user.auth_token
+  -yt_video = Yt::Video.new id: @video.uid, auth: account
+
+    
 .row      
   - if @video
-    .col-md-4.col-md-offset-4#show-video
-      .thumbnail
+    .col-md-4.col-md-offset-2#show-video
+      .thumbnail#show-video
         .embed-responsive.embed-responsive-16by9
-          %iframe{class: "embed-responsive-item", src: "http://www.youtube.com/embed/#{@video.uid}"}
+          %iframe{class: "embed-responsive-item", src: "http://www.youtube.com/embed/#{@video.uid}", :allowfullscreen => "true"}
         .caption
           %h6= @video.title
           %p

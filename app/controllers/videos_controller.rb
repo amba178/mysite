@@ -5,8 +5,16 @@ class VideosController < ApplicationController
   end
   
   def show
-  	@video = Video.find(params[:id])
+  	video = Video.find(params[:id])
+  	# if !current_user.nil? && current_user.provider=="google_oauth2"
+  	# 	account = video.yt_account(current_user)
+  	# 	@video = video.yt_video(account)
+  	# else
+  		@video = Video.find(params[:id])
+  	# end
   end
+
+  
   def new
   	@video = Video.new
   end
