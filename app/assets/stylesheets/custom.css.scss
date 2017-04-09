@@ -74,7 +74,7 @@ img#nav-image {
 div.jumbotron{
   margin-top: 20px;
 }
-
+/* file input styling*/
 input[type='file']{
   display: none;
 }
@@ -85,6 +85,7 @@ input[type='file']{
     padding: 6px 12px;
     cursor: pointer;
 }
+/*end of file input styling*/
 
 img.img-rounded{
   margin-top: 1px;
@@ -112,7 +113,8 @@ img#face-pic{
 }
 
 
-// Thumbnail animation style 
+/*Thumbnail animation style */
+
 #gallery-index img {
   transition: all .2s ease-in-out;
   
@@ -129,7 +131,8 @@ img#face-pic{
   transform: scale(1) rotate(2deg);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 }
-// animations end style 
+
+ /*animations end style */
 btn btn-primary btn-xs#btn-share{
 
 }

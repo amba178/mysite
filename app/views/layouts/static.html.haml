@@ -6,8 +6,8 @@
 		%title= full_title(yield(:title))
 		= csrf_meta_tags
 		= metamagic
-		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', async: true
+		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true
 		= javascript_include_tag "https://www.google.com/jsapi"
 		= javascript_include_tag "https://www.youtube.com/iframe_api"
 		= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lobster|Pacifico"  
