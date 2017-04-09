@@ -75,6 +75,17 @@ div.jumbotron{
   margin-top: 20px;
 }
 
+input[type='file']{
+  display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
 img.img-rounded{
   margin-top: 1px;
   margin-left: 1px !important;
