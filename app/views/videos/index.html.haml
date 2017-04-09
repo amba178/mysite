@@ -6,7 +6,7 @@
     %p Click the button below to share your video from YouTube or upload your own video.
     %p
       = link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg'
-      = link_to 'upload video now!', '#', class: 'btn btn-primary btn-lg'
+      = link_to 'upload video now!', new_video_upload_path, class: 'btn btn-primary btn-lg'
 - if @videos.any?
   %div{class: "container"} 
     %h2{class: 'text-center'} Latest videos

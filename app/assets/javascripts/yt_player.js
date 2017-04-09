@@ -14,7 +14,7 @@ $(document).on("turbolinks:load", function(){
 
 			window.ytplayer = new YT.Player('ytPlayer', {
 				width: '100%',
-				heigh: player_wrapper.width()/1.777777777,
+				heigh: player_wrapper.width()/1.77777770007,
 				videoId: video,
 				playerVars: {
 					wmode: 'opaque',
@@ -36,8 +36,9 @@ $(document).on("turbolinks:load", function(){
 
 		} else {
 			window.ytplayer.loadVideoById(video);
-			// window.ytplayer.pauseVideo();
+			 // window.ytplayer.pauseVideo();
 			window.ytplayer.playVideo();
+			console.log(video);
 
 		}
 

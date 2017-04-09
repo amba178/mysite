@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
 
+  
+
   root to: 'static_pages#index'
+  resources :video_uploads, only: [:new, :create]
   resources :photos, :charges, :posts, :locations, :videos, only: [:index, :new, :create, :show]
   resources :photos do 
     resources :posts 
