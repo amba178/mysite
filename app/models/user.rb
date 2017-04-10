@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
          :validatable, :confirmable, :timeoutable,
-         :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
+         :lockable, :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
   validates_presence_of :first_name, :last_name
   validates :email, email: true 

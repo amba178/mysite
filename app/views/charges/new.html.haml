@@ -50,12 +50,14 @@
 					.form-group
 						.col-md-offset-2.col-md-9.col-lg-offset-3.col-lg-6
 							=f.label :card_type, class: 'control-label' 
-							%br 
-							=f.select :card_type, opts, class: 'select-margin custom-select'
-							%br
+							=f.select :card_type, opts, {},class: 'form-control'
+							
+							
+					.form-group
+						.col-md-offset-2.col-md-9.col-lg-offset-3.col-lg-6.select-date-wrapper
 							=f.label :card_expires_on, class: 'control-label' 
 							%br
-							=f.date_select :card_expires_on,:order => [:month, :year], :start_year => Date.today.year, :end_year => (Date.today.year + 12), add_month_numbers: true, :discard_day => true
+							=f.date_select :card_expires_on, {:order => [:month, :year], :start_year => Date.today.year, :end_year => (Date.today.year + 12), add_month_numbers: true, :discard_day => true}, class: 'form-control select-date'
 
 					.form-group 
 						.col-md-offset-2.col-md-9.col-lg-offset-3.col-lg-8

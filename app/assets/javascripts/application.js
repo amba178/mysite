@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks 
 //= require jquery_ujs
 //= require jquery-fileupload/vendor/jquery.ui.widget
 //= require jquery-fileupload/vendor/load-image.all.min
@@ -23,7 +22,9 @@
 //= require jquery-fileupload/jquery.fileupload-validate
 //= require jquery-fileupload/vendor/tmpl 
 //= require jquery-fileupload/jquery.fileupload-image
-//= require twitter/bootstrap
-//= require_tree .
 //= require bootstrap-sprockets
+//= require bootstrap 
 //= require turbolinks
+//= require jquery.bind_with_delay
+//= require_tree .
+
