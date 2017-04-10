@@ -22,7 +22,7 @@
 	-if !session[:last_back].nil?
 		- session[:last_back]=nil
 		= s3_uploader_form post: photos_url, as: "photo[image]" do 
-			= file_field_tag :file, multiple: true 
+			= file_field_tag :file, multiple: true, class: 'form-control-file' 
 	
 	%script{ id: 'template-upload', type: 'text/x-tmpl'}
 		.upload

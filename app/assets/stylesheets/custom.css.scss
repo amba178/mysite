@@ -79,6 +79,24 @@ img.img-rounded{
   margin-top: 1px;
   margin-left: 1px !important;
 }
+/* date-select styling*/
+select.select-date {
+  width: 35%;
+  margin-right: 5px;
+  float: left;
+  
+}
+.select-date-wrapper{
+  select:first-of-type{
+    margin-left: 1px;
+    width: 60%;
+  }
+  select:last-of-type{
+    
+    float: left;
+  }
+}
+/*end date-select styling*/
 
 .footer a {
     color: #6b15a1;
@@ -580,6 +598,8 @@ h5{
     font-size: 5px;
   }
 
+
+
   #photo-show-page{
     font-size: 10px;
     margin-left: 50px;
@@ -595,6 +615,7 @@ h5{
 
   .form-control.cvv {
     width: 20%;
+    margin-top: 10px;
   }
   .page-header {
     margin-right: 0px !important;
