@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331025056) do
+ActiveRecord::Schema.define(version: 20170409205306) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170331025056) do
     t.string   "ip_address"
     t.string   "name"
     t.string   "card_type"
-    t.date     "card_expires_on"
     t.string   "billing_address"
     t.string   "zip_code"
     t.string   "city"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170331025056) do
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.integer  "amount"
+    t.string   "card_expires_on"
   end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
