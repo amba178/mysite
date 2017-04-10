@@ -77,6 +77,7 @@ Rails.application.configure do
     )
  end
 
+
  # bullet initialization 
  config.after_initialize do 
   Bullet.enable = true 
@@ -86,5 +87,6 @@ Rails.application.configure do
   Bullet.rails_logger = true 
   Bullet.add_footer = true 
  end
+ OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
  
 end

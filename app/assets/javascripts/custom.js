@@ -17,6 +17,7 @@ $(document).on("turbolinks:load", function() {
 	}
 });
 
-$(document).on('click', '.content', function(){
+$(document).on('click', '.yt_video', function(){
 	// alert($(this).parent().attr("class"));
+	// console.log('I am clicked');
 });

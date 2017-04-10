@@ -1,0 +1,18 @@
+- provide(:title, "Upload video")
+
+%h1{class: 'text-center'} Upload video 
+- if !current_user.nil? && current_user.provider == 'google_oauth2'
+	=form_for @video_upload do |f|
+		= render 'shared/error_messages', object: f.object
+		
+		.form-group 
+			=f.label :tile 
+			=f.text_field :title, class: 'form-control', required: true 
+		.form-group
+			=f.label :description 
+			=f.text_area :description, class: 'form-control', cols: 4 
+		.form-group 
+			=f.file_field :file, class: 'form-control-file', required: true 
+		=f.submit 'Upload', class: 'btn btn-primary btn-block'
+-else
+	%p=link_to "Please, login with google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-block"

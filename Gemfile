@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.0.0'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'bootstrap-sass',          '3.2.0.0'
@@ -41,6 +41,7 @@ gem 'roadie', '~> 3.1.1'
 gem "koala", "~> 2.2"
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem  "omniauth-google-oauth2"
 gem 'ancestry'
 gem 'ffaker'
 gem 'faker'
@@ -48,7 +49,9 @@ gem 'bootstrap-will_paginate'
 gem 'geocoder'
 gem "jquery-fileupload-rails"
 gem 's3_direct_upload'
-gem 'youtube_it'
+gem 'yt', '~> 0.28.0'
+gem 'active_type'
+# gem 'rails-observers'
 
 
 

@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 20170204044938) do
+ActiveRecord::Schema.define(version: 20170331025056) do 
 
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -105,9 +105,19 @@ ActiveRecord::Schema.define(version: 20170204044938) do
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+
+    t.string   "link"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "published_at"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "uid"
+    t.string   "duration"
+    t.string   "author"
+    t.index ["uid"], name: "index_videos_on_uid", using: :btree
+
   end
 
 end
