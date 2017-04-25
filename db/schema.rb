@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204044938) do
+ActiveRecord::Schema.define(version: 20170411035814) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170204044938) do
     t.string   "ip_address"
     t.string   "name"
     t.string   "card_type"
-    t.date     "card_expires_on"
     t.string   "billing_address"
     t.string   "zip_code"
     t.string   "city"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170204044938) do
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
     t.integer  "amount"
+    t.string   "card_expires_on"
   end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -99,6 +99,21 @@ ActiveRecord::Schema.define(version: 20170204044938) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+  end
+
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "link"
+    t.string   "title"
+    t.datetime "published_at"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "uid"
+    t.string   "duration"
+    t.string   "author"
+    t.boolean  "video_processed", default: false
+    t.index ["uid"], name: "index_videos_on_uid", using: :btree
   end
 
 end

@@ -8,6 +8,7 @@
 @glyphiconsSvgPath: font-url("glyphicons-halflings-regular.svg#glyphicons_halflingsregular");
 
 @import "twitter/bootstrap/glyphicons.less";
+
 // Font Awesome
 // @import "fontawesome/font-awesome";
 // 
@@ -19,6 +20,18 @@
 
 .navbar-brand {
 	color: @navbar-brand-color !important;
+}
+a.dropdown-toggle{
+	background-color: @btn-primary-bg !important;
+}
+.dropdown-menu{
+	background-color: @btn-primary-bg !important;
+
+}
+.dropdown-menu > li > a {
+	color: @navbar-brand-color !important;
+	background-color: @btn-primary-bg !important;
+
 }
 
 

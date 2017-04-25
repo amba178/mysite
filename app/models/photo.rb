@@ -6,7 +6,7 @@ class Photo < ApplicationRecord
 	# geocoded_by :address 
 	# after_validation :geocode, :if => :address_changed? 
 	before_create :default_name 
-	before_create  :location
+	# before_create  :location
 
 	# after_save :enqueue_image, :enqueue_geo_location
 
@@ -26,7 +26,7 @@ class Photo < ApplicationRecord
   	end
 
   	def enqueue_geo_location
-  		GeoLocationJob.perform_later(id)
+  		GeoLocationJob.perform_later(id, key) if key.present?
   	end
 
 end

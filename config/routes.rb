@@ -1,9 +1,12 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   
 
+  
 
   root to: 'static_pages#index'
-  resources :photos, :charges, :posts, :locations
+  resources :video_uploads, only: [:new, :create]
+  resources :photos, :charges, :posts, :locations, :videos, only: [:index, :new, :create, :show]
   resources :photos do 
     resources :posts 
   end
@@ -26,6 +29,16 @@ Rails.application.routes.draw do
     match '/user', to: 'registrations#show', via: 'get'
    # get '/profile', to: 'registrations#show', as: 'profile'
  end
+
+ authenticate :user do 
+  mount Sidekiq::Web => '/sidekiq'
+ end
+
+
+# # config/routes.rb
+# authenticate :user, lambda { |u| u.admin? } do
+#   mount Sidekiq::Web => '/sidekiq'
+# end
 
 
 
