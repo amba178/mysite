@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409205306) do
+ActiveRecord::Schema.define(version: 20170411035814) do
 
   create_table "charge_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "charge_id"
@@ -107,11 +107,12 @@ ActiveRecord::Schema.define(version: 20170409205306) do
     t.datetime "published_at"
     t.integer  "likes"
     t.integer  "dislikes"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "uid"
     t.string   "duration"
     t.string   "author"
+    t.boolean  "video_processed", default: false
     t.index ["uid"], name: "index_videos_on_uid", using: :btree
   end
 

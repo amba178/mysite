@@ -51,6 +51,7 @@ gem "jquery-fileupload-rails"
 gem 's3_direct_upload'
 gem 'yt', '~> 0.28.0'
 gem 'active_type'
+gem 'inherited_resources', '~> 1.7'
 # gem 'rails-observers'
 
 
