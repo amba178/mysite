@@ -1,27 +1,11 @@
 
--if controller_name == 'confirmations' || controller_name == 'sessions' || controller_name == 'static_pages'
-	%footer{:id => [(!(controller_name=='static_pages' || controller_name=='sessions' || controller_name=='passwords' || controller_name=='confirmations') ) ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
-		%div{:class => 'container'}
-			%ul{class: "footer-list"}
-				%li{class: "footer-list-item"}
-					=link_to "About Me", about_path 
-				%li{class: "footer-list-item"}
-					=link_to "Contact", contact_path 
-				%li{class: "footer-list-item"}
-					=link_to "Hometown Photo Gallery", photos_url
--else
-
-	%footer{:id => [((controller_name =='photos' && action_name=='index' && Photo.all.size > 3 || !flash['notice'].nil?) || controller_name =='photos' && ['show'].include?(action_name) ||controller_name=='posts' || controller_name=='registrations' && !['show','edit'].include?(action_name)|| controller_name=='charges') ? 'footer-relative' : 'footer-absolute'], class: 'footer'}
-		%div{:class => 'container'}
-			%ul{class: "footer-list"}
-				%li{class: "footer-list-item"}
-					=link_to "About Me", about_path 
-				%li{class: "footer-list-item"}
-					=link_to "Contact", contact_path 
-				%li{class: "footer-list-item"}
-					=link_to "Hometown Photo Gallery", photos_url
-				%li{class: "footer-list-item"}
-					=link_to "Videos Gallery", "#"
-
-		
-	
+%footer{:id => footer_position(controller_name, action_name, flash['notice']), class: 'footer'}
+	%div{:class => 'container'}
+		%ul{class: "footer-list"}
+			%li{class: "footer-list-item"}
+				=link_to "About Me", about_path 
+			%li{class: "footer-list-item"}
+				=link_to "Contact", contact_path 
+			%li{class: "footer-list-item"}
+				=link_to "Hometown Photo Gallery", photos_url
+			%li{class: "footer-list-item"}= link_to 'Videos Gallery', '#'
