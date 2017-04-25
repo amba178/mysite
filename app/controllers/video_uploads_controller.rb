@@ -5,7 +5,7 @@ class VideoUploadsController < ApplicationController
 
   def create
     # byebug
-  	# @video_upload = VideoUpload.new(title: params[:video_upload][:title],
+  	@video_upload = VideoUpload.new(title: params[:video_upload][:title],
                                   description: params[:video_upload][:description],
                                   file: params[:video_upload][:file].try(:tempfile).try(:to_path))
   	# if @video_upload.save
