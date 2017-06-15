@@ -19,7 +19,7 @@ class VideoUploadsController < ApplicationController
   		  Video.create({link: "https://www.youtube.com/watch?v=#{uploaded_video.id}"})
   		  flash[:notice] = 'Your video has been uploaded!'
   		end
-      redirect_to videos_url, notice: 'Your video is being uploading!'
+        redirect_to videos_url, notice: 'Your video is being uploading!'
 
   	else
   		render :new
